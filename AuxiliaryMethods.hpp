@@ -14,7 +14,7 @@
 #include <algorithm>
 using namespace std;
 
-class HelpfullMetods
+class AuxiliaryMethods
 {
 public:
     static string convertIntToString(int number);

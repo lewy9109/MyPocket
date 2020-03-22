@@ -6,9 +6,9 @@
 //  Copyright © 2020 Krystian Lewandowski. All rights reserved.
 //
 
-#include "HelpfullMetods.hpp"
+#include "AuxiliaryMethods.hpp"
 
-string HelpfullMetods::convertIntToString(int number)
+string AuxiliaryMethods::convertIntToString(int number)
 {
     ostringstream ss;       
     ss << number;
@@ -16,20 +16,20 @@ string HelpfullMetods::convertIntToString(int number)
     return str;
 }
 
-int HelpfullMetods::convertStringToInt(string number)
+int AuxiliaryMethods::convertStringToInt(string number)
 {
     int liczbaInt;
     istringstream iss(number);
     iss >> liczbaInt;
     return liczbaInt;
 }
-string HelpfullMetods::wczytajLinie()
+string AuxiliaryMethods::wczytajLinie()
 {
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
 }
-string HelpfullMetods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string text)
+string AuxiliaryMethods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string text)
 {
     if (!text.empty())
     {
@@ -39,7 +39,7 @@ string HelpfullMetods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string text)
     return text;
 }
 
-int HelpfullMetods::wczytajLiczbeCalkowita()
+int AuxiliaryMethods::wczytajLiczbeCalkowita()
 {
     string wejscie = "";
     int liczba = 0;
@@ -55,7 +55,7 @@ int HelpfullMetods::wczytajLiczbeCalkowita()
     }
     return liczba;
 }
-char HelpfullMetods::wczytajZnak()
+char AuxiliaryMethods::wczytajZnak()
 {
     string wejscie = "";
     char znak  = {0};

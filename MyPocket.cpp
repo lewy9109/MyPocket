@@ -7,3 +7,8 @@
 //
 
 #include "MyPocket.hpp"
+
+void MyPocket::registerUaer()
+{
+    userMenager.registerUaer();
+}

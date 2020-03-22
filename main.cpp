@@ -7,18 +7,19 @@
 //
 
 #include <iostream>
-//#include "pugixml.hpp"
-
 #include "UserMenager.hpp"
+
+
+
 using namespace std;
+
 
 int main()
 {
+   
     
-    UserMenager user;
-    
-    user.addNewUser();
-    user.addNewUser();
     
     return 0;
 }
+
+

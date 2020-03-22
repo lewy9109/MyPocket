@@ -35,7 +35,7 @@ string FileWithUser::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKresk
 {
     string liniaZDanymiUzytkownika = "";
 
-    liniaZDanymiUzytkownika += helpFullMetods.convertIntToString(user.getId()) + '|';
+    liniaZDanymiUzytkownika += AuxiliaryMethods::convertIntToString(user.getId()) + '|';
     liniaZDanymiUzytkownika += user.getName() + '|';
     liniaZDanymiUzytkownika += user.getSurname() + '|';
     liniaZDanymiUzytkownika += user.getLogin() + '|';
@@ -52,3 +52,5 @@ bool FileWithUser::czyPlikJestPusty(fstream &plikTekstowy)
     else
         return false;
 }
+
+

@@ -15,17 +15,19 @@
 #include <vector>
 #include "User.hpp"
 #include "FileWithUser.hpp"
+#include "AuxiliaryMethods.hpp"
 using namespace std;
 class UserMenager
 {
+    int ID_LOG_USER;
     vector <User> users;
     User giveDataNewUser();
     int downloadIdNewUser();
     bool isThereALogin(string login);
-    
     FileWithUser fileWithUser;
-public:
-   void addNewUser();
     
+public: 
+    void registerUaer();
+    int loggingUser();
 };
 #endif /* UserMenager_hpp */

@@ -12,7 +12,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "User.hpp"
-#include "HelpfullMetods.hpp"
+#include "AuxiliaryMethods.hpp"
 #include <fstream>
 using namespace std;
 class FileWithUser
@@ -20,9 +20,10 @@ class FileWithUser
    const string NAME_FILE = "User.txt";
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(User user);
     bool czyPlikJestPusty(fstream &plikTekstowy);
-    HelpfullMetods helpFullMetods;
+    
 public:
-    void addUserToFile(User user);  
+    void addUserToFile(User user);
+    //void addUserToFileXML(User user);
 };
 
 #endif /* FileWithUser_hpp */

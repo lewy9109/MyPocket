@@ -10,5 +10,16 @@
 #define MyPocket_hpp
 
 #include <stdio.h>
+#include <iostream>
+#include "UserMenager.hpp"
+using namespace std;
+
+class MyPocket
+{
+    
+    UserMenager userMenager;
+public:
+    void registerUaer();
+};
 
 #endif /* MyPocket_hpp */

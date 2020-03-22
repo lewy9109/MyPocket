@@ -7,7 +7,7 @@
 //
 
 #include "UserMenager.hpp"
-void UserMenager::addNewUser()
+void UserMenager::registerUaer()
 {
     User user = giveDataNewUser();
     
@@ -66,3 +66,46 @@ bool UserMenager::isThereALogin(string login)
     }
     return false;
 }
+
+int UserMenager::loggingUser()
+{
+
+    User user;
+    AuxiliaryMethods aluxiliaryMethods;
+    string login = "", password = "";
+
+    cout << endl << "Podaj login: ";
+    login = aluxiliaryMethods.wczytajLinie();
+
+    vector <User>::iterator itr = users.begin();
+    while (itr != users.end())
+    {
+        if (itr -> getLogin() == login)
+        {
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                password = aluxiliaryMethods.wczytajLinie();
+
+                if (itr -> getPassword() == password)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                   ID_LOG_USER = itr -> getId();
+                   system("pause");
+                    usleep(2000000);
+                   return ID_LOG_USER;
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            usleep(2000000);
+            return 0;
+        }
+        itr++;
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    usleep(2000000);
+    return 0;
+}
+
