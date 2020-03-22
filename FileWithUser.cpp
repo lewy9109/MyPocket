@@ -86,3 +86,61 @@ void FileWithUser::saveAllUseresToFile(vector <User> &users)
     }
    
 }
+
+vector <User> FileWithUser::loadAllUsersWithFile()
+{
+    vector <User> users;
+    User user;
+    string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
+    fstream plikTekstowy;
+    plikTekstowy.open(NAME_FILE.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true)
+    {
+        while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami))
+        {
+            user = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+            users.push_back(user);
+        }
+
+    }
+    plikTekstowy.close();
+    return users;
+}
+User FileWithUser::pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami)
+{
+    User user;
+    string pojedynczaDanaUzytkownika = "";
+    int numerPojedynczejDanejUzytkownika = 1;
+
+    for (int pozycjaZnaku = 0; pozycjaZnaku < daneJednegoUzytkownikaOddzielonePionowymiKreskami.length(); pozycjaZnaku++)
+    {
+        if (daneJednegoUzytkownikaOddzielonePionowymiKreskami[pozycjaZnaku] != '|')
+        {
+            pojedynczaDanaUzytkownika += daneJednegoUzytkownikaOddzielonePionowymiKreskami[pozycjaZnaku];
+        }
+        else
+        {
+            switch(numerPojedynczejDanejUzytkownika)
+            {
+            case 1:
+                    user.setId(atoi(pojedynczaDanaUzytkownika.c_str()));
+                break;
+            case 2:
+                    user.setName(pojedynczaDanaUzytkownika);
+                break;
+            case 3:
+                    user.setSurname(pojedynczaDanaUzytkownika);
+                break;
+            case 4:
+                    user.setLogin(pojedynczaDanaUzytkownika);
+                break;
+            case 5:
+                    user.setPassword(pojedynczaDanaUzytkownika);
+            }
+            pojedynczaDanaUzytkownika = "";
+            numerPojedynczejDanejUzytkownika++;
+        }
+    }
+    return user;
+}
