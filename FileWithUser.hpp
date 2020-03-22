@@ -21,10 +21,14 @@ class FileWithUser
    const string NAME_FILE = "User.txt";
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(User user);
     bool czyPlikJestPusty(fstream &plikTekstowy);
+    User pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+
     
 public:
     void addUserToFile(User user);
     void saveAllUseresToFile(vector <User> &users);
+    vector <User> loadAllUsersWithFile();
+
     //void addUserToFileXML(User user);
 };
 
