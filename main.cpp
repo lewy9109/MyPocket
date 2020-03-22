@@ -17,8 +17,14 @@ using namespace std;
 int main()
 {
    
+    UserMenager user;
     
+  //  user.registerUaer();
+  //  user.registerUaer();
+
     
+    user.loggingUser();
+  //  user.changePassworgLoggedUser();
     return 0;
 }
 

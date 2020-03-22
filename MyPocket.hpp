@@ -20,6 +20,7 @@ class MyPocket
     UserMenager userMenager;
 public:
     void registerUaer();
+    void loggingUser();
 };
 
 #endif /* MyPocket_hpp */

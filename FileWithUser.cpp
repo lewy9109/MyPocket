@@ -53,4 +53,36 @@ bool FileWithUser::czyPlikJestPusty(fstream &plikTekstowy)
         return false;
 }
 
+void FileWithUser::saveAllUseresToFile(vector <User> &users)
+{
+    
+    string lineWithDataUser = "";
 
+    vector <User>::iterator itrKoniec = --users.end();
+    fstream plikTekstowy;
+    plikTekstowy.open(NAME_FILE.c_str(), ios::out);
+
+    if (plikTekstowy.good() == true)
+    {
+        for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++)
+        {
+            lineWithDataUser = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(*itr);
+
+            if (itr == itrKoniec)
+            {
+               plikTekstowy << lineWithDataUser;
+            }
+            else
+            {
+                plikTekstowy << lineWithDataUser << endl;
+            }
+            lineWithDataUser = "";
+        }
+         plikTekstowy.close();
+    }
+    else
+    {
+        cout << "Nie mozna otworzyc pliku " << NAME_FILE << endl;
+    }
+   
+}
