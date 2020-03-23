@@ -13,6 +13,7 @@
 		4D80F1E924229F820058FDFB /* FileWithUser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D80F1E724229F820058FDFB /* FileWithUser.cpp */; };
 		4D80F1EC2422A1040058FDFB /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D80F1EA2422A1040058FDFB /* User.cpp */; };
 		4DFCA6AE24279B4F00427FD7 /* AuxiliaryMethods.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */; };
+		4DFCA6B32427ADD900427FD7 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DFCA6B22427ADD900427FD7 /* pugixml.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,14 +39,11 @@
 		4D80F1E824229F820058FDFB /* FileWithUser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileWithUser.hpp; sourceTree = "<group>"; };
 		4D80F1EA2422A1040058FDFB /* User.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = User.cpp; sourceTree = "<group>"; };
 		4D80F1EB2422A1040058FDFB /* User.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = User.hpp; sourceTree = "<group>"; };
-		4DFCA6A624268A8D00427FD7 /* rapidxml_iterators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_iterators.hpp; sourceTree = "<group>"; };
-		4DFCA6A724268A8D00427FD7 /* rapidxml_print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_print.hpp; sourceTree = "<group>"; };
-		4DFCA6A824268A8D00427FD7 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_utils.hpp; sourceTree = "<group>"; };
-		4DFCA6A924268A8D00427FD7 /* rapidxml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml.hpp; sourceTree = "<group>"; };
-		4DFCA6AA24268A8D00427FD7 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
-		4DFCA6AB24268A8D00427FD7 /* manual.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = manual.html; sourceTree = "<group>"; };
 		4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuxiliaryMethods.cpp; sourceTree = "<group>"; };
 		4DFCA6AD24279B4F00427FD7 /* AuxiliaryMethods.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AuxiliaryMethods.hpp; sourceTree = "<group>"; };
+		4DFCA6B02427ADD900427FD7 /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugiconfig.hpp; sourceTree = "<group>"; };
+		4DFCA6B12427ADD900427FD7 /* pugixml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugixml.hpp; sourceTree = "<group>"; };
+		4DFCA6B22427ADD900427FD7 /* pugixml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pugixml.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +60,9 @@
 		4D80F1C624229C7B0058FDFB = {
 			isa = PBXGroup;
 			children = (
+				4DFCA6AF2427ADD900427FD7 /* pugi */,
 				4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */,
 				4DFCA6AD24279B4F00427FD7 /* AuxiliaryMethods.hpp */,
-				4DFCA6A524268A8D00427FD7 /* rapidxml */,
 				4D80F1EA2422A1040058FDFB /* User.cpp */,
 				4D80F1EB2422A1040058FDFB /* User.hpp */,
 				4D80F1E724229F820058FDFB /* FileWithUser.cpp */,
@@ -86,17 +84,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4DFCA6A524268A8D00427FD7 /* rapidxml */ = {
+		4DFCA6AF2427ADD900427FD7 /* pugi */ = {
 			isa = PBXGroup;
 			children = (
-				4DFCA6A624268A8D00427FD7 /* rapidxml_iterators.hpp */,
-				4DFCA6A724268A8D00427FD7 /* rapidxml_print.hpp */,
-				4DFCA6A824268A8D00427FD7 /* rapidxml_utils.hpp */,
-				4DFCA6A924268A8D00427FD7 /* rapidxml.hpp */,
-				4DFCA6AA24268A8D00427FD7 /* license.txt */,
-				4DFCA6AB24268A8D00427FD7 /* manual.html */,
+				4DFCA6B02427ADD900427FD7 /* pugiconfig.hpp */,
+				4DFCA6B12427ADD900427FD7 /* pugixml.hpp */,
+				4DFCA6B22427ADD900427FD7 /* pugixml.cpp */,
 			);
-			path = rapidxml;
+			path = pugi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +155,7 @@
 				4D80F1E924229F820058FDFB /* FileWithUser.cpp in Sources */,
 				4D80F1E624229F5A0058FDFB /* UserMenager.cpp in Sources */,
 				4DFCA6AE24279B4F00427FD7 /* AuxiliaryMethods.cpp in Sources */,
+				4DFCA6B32427ADD900427FD7 /* pugixml.cpp in Sources */,
 				4D80F1E324229F2E0058FDFB /* MyPocket.cpp in Sources */,
 				4D80F1EC2422A1040058FDFB /* User.cpp in Sources */,
 			);

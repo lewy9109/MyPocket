@@ -8,23 +8,19 @@
 
 #include <iostream>
 #include "UserMenager.hpp"
-
-
+#include "pugixml.hpp"
 
 using namespace std;
 
 
 int main()
 {
-   
-    UserMenager user;
+     UserMenager user;
     
-  //  user.registerUaer();
-  //  user.registerUaer();
-
-    
-    user.loggingUser();
-  //  user.changePassworgLoggedUser();
+    user.registerUaer();
+   //user.registerUaer();
+ 
+        
     return 0;
 }
 

@@ -7,14 +7,15 @@
 //
 
 #include "UserMenager.hpp"
+
 void UserMenager::registerUaer()
 {
     User user = giveDataNewUser();
     
     users.push_back(user);
     
-    fileWithUser.addUserToFile(user);
-    
+   // fileWithUser.addUserToFile(user);
+    fileWithUser.addUserToFileXML(user);
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     usleep(2000000);
    // system("pause"); include <windows.h>
@@ -125,5 +126,5 @@ void UserMenager::changePassworgLoggedUser()
         }
     }
     
-    fileWithUser.saveAllUseresToFile(users);
+   // fileWithUser.saveAllUseresToFile(users);
 }
