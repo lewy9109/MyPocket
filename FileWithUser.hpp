@@ -14,22 +14,26 @@
 #include "User.hpp"
 #include "AuxiliaryMethods.hpp"
 #include <fstream>
+#include "pugixml.hpp"
 #include <vector>
 using namespace std;
 class FileWithUser
 {
    const string NAME_FILE = "User.txt";
-    string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(User user);
-    bool czyPlikJestPusty(fstream &plikTekstowy);
-    User pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+  //  string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(User user);
+ //   bool czyPlikJestPusty(fstream &plikTekstowy);
+  //  User pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
     
 public:
-    void addUserToFile(User user);
-    void saveAllUseresToFile(vector <User> &users);
-    vector <User> loadAllUsersWithFile();
+   // void addUserToFile(User user);
+    
+   // void saveAllUseresToFile(vector <User> &users);
+   // vector <User> loadAllUsersWithFile();
+    void addUserToFileXML(User user);
+    void loadAllUserFromFile();
 
-    //void addUserToFileXML(User user);
+  
 };
 
 #endif /* FileWithUser_hpp */

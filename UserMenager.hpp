@@ -30,6 +30,7 @@ public:
     void registerUaer();
     int loggingUser();
     void changePassworgLoggedUser();
+  
 
 };
 #endif /* UserMenager_hpp */

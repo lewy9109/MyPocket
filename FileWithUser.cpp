@@ -7,7 +7,7 @@
 //
 
 #include "FileWithUser.hpp"
-
+/*
 void FileWithUser::addUserToFile(User user)     
 {
     string liniaZDanymiUzytkownika = "";
@@ -107,6 +107,7 @@ vector <User> FileWithUser::loadAllUsersWithFile()
     plikTekstowy.close();
     return users;
 }
+
 User FileWithUser::pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami)
 {
     User user;
@@ -144,3 +145,57 @@ User FileWithUser::pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielon
     }
     return user;
 }
+ 
+*/
+void FileWithUser::addUserToFileXML(User user)
+{
+    AuxiliaryMethods auxiliaryMethods;
+    
+    pugi::xml_document doc; 
+    pugi::xml_parse_result result = doc.load_file("Test",pugi::parse_default|pugi::parse_declaration);
+    if (!result)
+    {
+        //jesli nie istnieje plik;
+        cout << "Plik NIe istnieje" << endl;
+        auto root = doc.append_child("Uzytkownicy"); // tworznie nowego pliku z galezia glowna
+        pugi::xml_node Uzytkownik = root.append_child("Uzytkownik");
+           
+       pugi::xml_node id = Uzytkownik.append_child("ID");
+       id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertIntToString(user.getId()).c_str());
+       pugi::xml_node name = Uzytkownik.append_child("Name");
+       name.append_child(pugi::node_pcdata).set_value(user.getName().c_str());
+       pugi::xml_node surName = Uzytkownik.append_child("Surname");
+       surName.append_child(pugi::node_pcdata).set_value(user.getSurname().c_str());
+       pugi::xml_node login = Uzytkownik.append_child("Login");
+       login.append_child(pugi::node_pcdata).set_value(user.getLogin().c_str());
+       pugi::xml_node password = Uzytkownik.append_child("Password");
+       password.append_child(pugi::node_pcdata).set_value(user.getPassword().c_str());
+           
+        //doc.print(std::cout); //wyswietlenie w terminalu;
+        bool saveSucceeded = doc.save_file("Test");
+        assert(saveSucceeded);
+    }
+    else
+    {
+       
+    pugi::xml_node root = doc.document_element(); // dodawanie kolejnych uzytkownikow
+    pugi::xml_node Uzytkownik = root.append_child("Uzytkownik");
+    
+    pugi::xml_node id = Uzytkownik.append_child("ID");
+    id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertIntToString(user.getId()).c_str());
+    pugi::xml_node name = Uzytkownik.append_child("Name");
+    name.append_child(pugi::node_pcdata).set_value(user.getName().c_str());
+    pugi::xml_node surName = Uzytkownik.append_child("Surname");
+    surName.append_child(pugi::node_pcdata).set_value(user.getSurname().c_str());
+    pugi::xml_node login = Uzytkownik.append_child("Login");
+    login.append_child(pugi::node_pcdata).set_value(user.getLogin().c_str());
+    pugi::xml_node password = Uzytkownik.append_child("Password");
+    password.append_child(pugi::node_pcdata).set_value(user.getPassword().c_str());
+    
+     //doc.print(std::cout); //wyswietlenie w terminalu;
+      bool saveSucceeded = doc.save_file("Test");
+      assert(saveSucceeded);
+    }
+}
+
+
