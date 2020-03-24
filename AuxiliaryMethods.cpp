@@ -73,4 +73,15 @@ char AuxiliaryMethods::wczytajZnak()
     }
     return znak;
 }
-
+void AuxiliaryMethods::deleteFile(string nameFileWithEnlargement)
+{
+    if (remove(nameFileWithEnlargement.c_str()) == 0) {}
+    else
+        cout << "Nie udalo sie usunac pliku " << nameFileWithEnlargement << endl;
+}
+void AuxiliaryMethods::changeNameFile(string oldName, string newName)   
+{
+    if (rename(oldName.c_str(), newName.c_str()) == 0) {}
+    else
+        cout << "Nazwa pliku nie zostala zmieniona." << oldName << endl;
+}

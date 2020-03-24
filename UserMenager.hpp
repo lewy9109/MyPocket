@@ -19,18 +19,22 @@
 using namespace std;
 class UserMenager
 {
-    int ID_LOG_USER;
+    int idLoggingUser;
     vector <User> users;
     User giveDataNewUser();
     int downloadIdNewUser();
     bool isThereALogin(string login);
     FileWithUser fileWithUser;
     
-public: 
+public:
+    UserMenager(string nameFileWithUser): fileWithUser(nameFileWithUser){
+        idLoggingUser = 0;
+        users = fileWithUser.readUsersFromFile();
+    };
     void registerUaer();
     int loggingUser();
     void changePassworgLoggedUser();
-  
-
-};
+    bool isUserLogging();
+    void wyswietl();
+};  
 #endif /* UserMenager_hpp */

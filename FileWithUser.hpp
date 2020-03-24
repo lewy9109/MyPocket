@@ -10,30 +10,23 @@
 #define FileWithUser_hpp
 
 #include <iostream>
-#include <stdio.h>
+#include "File.h"
 #include "User.hpp"
 #include "AuxiliaryMethods.hpp"
-#include <fstream>
 #include "pugixml.hpp"
 #include <vector>
 using namespace std;
-class FileWithUser
+class FileWithUser : File
 {
-   const string NAME_FILE = "User.txt";
-  //  string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(User user);
- //   bool czyPlikJestPusty(fstream &plikTekstowy);
-  //  User pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+   // const string NAME_FILE;
 
-    
 public:
-   // void addUserToFile(User user);
+    FileWithUser(string nameFileWithUser) : File(nameFileWithUser){};
     
-   // void saveAllUseresToFile(vector <User> &users);
-   // vector <User> loadAllUsersWithFile();
     void addUserToFileXML(User user);
     void loadAllUserFromFile();
-
-  
+    vector <User> readUsersFromFile();
+    void saveAllUseresToFile(vector <User> &users);
 };
 
 #endif /* FileWithUser_hpp */

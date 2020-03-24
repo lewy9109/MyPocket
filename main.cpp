@@ -8,20 +8,26 @@
 
 #include <iostream>
 #include "UserMenager.hpp"
+
 #include "pugixml.hpp"
-
+#include "User.hpp"
+#include <vector>
+#include "MyPocket.hpp"
 using namespace std;
-
-
 int main()
 {
-     UserMenager user;
     
-    user.registerUaer();
-   //user.registerUaer();
+    
+    UserMenager user ("Users");
+
+    user.loggingUser(); 
+    user.wyswietl();
+    user.changePassworgLoggedUser();
  
         
-    return 0;
+    return 0;   
 }
 
 
+
+    

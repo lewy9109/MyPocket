@@ -39,6 +39,7 @@
 		4D80F1E824229F820058FDFB /* FileWithUser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileWithUser.hpp; sourceTree = "<group>"; };
 		4D80F1EA2422A1040058FDFB /* User.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = User.cpp; sourceTree = "<group>"; };
 		4D80F1EB2422A1040058FDFB /* User.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = User.hpp; sourceTree = "<group>"; };
+		4D8EBC2E24292CB4004B4951 /* File.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuxiliaryMethods.cpp; sourceTree = "<group>"; };
 		4DFCA6AD24279B4F00427FD7 /* AuxiliaryMethods.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AuxiliaryMethods.hpp; sourceTree = "<group>"; };
 		4DFCA6B02427ADD900427FD7 /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugiconfig.hpp; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 				4D80F1E524229F5A0058FDFB /* UserMenager.hpp */,
 				4D80F1E124229F2E0058FDFB /* MyPocket.cpp */,
 				4D80F1E224229F2E0058FDFB /* MyPocket.hpp */,
+				4D8EBC2E24292CB4004B4951 /* File.h */,
 				4D80F1DC24229D750058FDFB /* main.cpp */,
 				4D80F1D024229C7B0058FDFB /* Products */,
 			);

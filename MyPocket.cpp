@@ -12,3 +12,12 @@ void MyPocket::registerUaer()
 {
     userMenager.registerUaer();
 }
+void MyPocket::loggingUser()
+{
+    userMenager.loggingUser();
+    if(userMenager.isUserLogging())
+    {
+       // adresatMenager = new AdresatMenager(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenager.pobierzIdZalogowanegoUzytkownika());
+    }
+}
+

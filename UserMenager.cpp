@@ -14,11 +14,9 @@ void UserMenager::registerUaer()
     
     users.push_back(user);
     
-   // fileWithUser.addUserToFile(user);
     fileWithUser.addUserToFileXML(user);
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     usleep(2000000);
-   // system("pause"); include <windows.h>
 }
 User UserMenager::giveDataNewUser()
 {
@@ -91,10 +89,10 @@ int UserMenager::loggingUser()
                 if (itr -> getPassword() == password)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                   ID_LOG_USER = itr -> getId();
+                   idLoggingUser = itr -> getId();
                    system("pause");
                     usleep(2000000);
-                   return ID_LOG_USER;
+                   return idLoggingUser;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -118,13 +116,29 @@ void UserMenager::changePassworgLoggedUser()
 
     for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++)
     {
-        if (itr -> getId() == ID_LOG_USER)
+        if (itr -> getId() == idLoggingUser)
         {
             itr -> setPassword(newPassword);
             cout << "Haslo zostalo zmienione." << endl << endl;
             usleep(2000000);
         }
     }
-    
-   // fileWithUser.saveAllUseresToFile(users);
+    fileWithUser.saveAllUseresToFile(users);
+}
+
+bool UserMenager::isUserLogging()   
+{
+    if(idLoggingUser > 0)
+        return true;
+    else
+        return false;
+}
+
+void UserMenager::wyswietl()
+{
+    vector<User> :: iterator itr;
+    for (itr = users.begin(); itr != users.end();itr ++)
+    {
+        cout << itr -> getId() << " " << itr -> getName() << endl;
+    }
 }

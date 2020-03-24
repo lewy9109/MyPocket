@@ -25,6 +25,9 @@ public:
     string pobierzLiczbe(string text, int pozycjaZnaku);
     int wczytajLiczbeCalkowita();
     char wczytajZnak();
+    void deleteFile(string nameFileWithEnlargement);
+    void changeNameFile(string oldName, string newName);
+    
     
 };
 #endif /* MetodyPomocnicze_hpp */
