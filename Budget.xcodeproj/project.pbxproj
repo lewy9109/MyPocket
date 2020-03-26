@@ -15,6 +15,8 @@
 		4D8EBC31242A1C8D004B4951 /* Income.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC2F242A1C8D004B4951 /* Income.cpp */; };
 		4D8EBC34242A1EBB004B4951 /* PocketMenager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC32242A1EBB004B4951 /* PocketMenager.cpp */; };
 		4D8EBC37242CB16C004B4951 /* FileWithIncomes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC35242CB16C004B4951 /* FileWithIncomes.cpp */; };
+		4D8EBC3A242D26A7004B4951 /* Expense.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC38242D26A7004B4951 /* Expense.cpp */; };
+		4D8EBC3D242D2940004B4951 /* FileWithExpenses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC3B242D2940004B4951 /* FileWithExpenses.cpp */; };
 		4DFCA6AE24279B4F00427FD7 /* AuxiliaryMethods.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */; };
 		4DFCA6B32427ADD900427FD7 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DFCA6B22427ADD900427FD7 /* pugixml.cpp */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,10 @@
 		4D8EBC33242A1EBB004B4951 /* PocketMenager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PocketMenager.hpp; sourceTree = "<group>"; };
 		4D8EBC35242CB16C004B4951 /* FileWithIncomes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileWithIncomes.cpp; sourceTree = "<group>"; };
 		4D8EBC36242CB16C004B4951 /* FileWithIncomes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileWithIncomes.hpp; sourceTree = "<group>"; };
+		4D8EBC38242D26A7004B4951 /* Expense.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Expense.cpp; sourceTree = "<group>"; };
+		4D8EBC39242D26A7004B4951 /* Expense.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Expense.hpp; sourceTree = "<group>"; };
+		4D8EBC3B242D2940004B4951 /* FileWithExpenses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileWithExpenses.cpp; sourceTree = "<group>"; };
+		4D8EBC3C242D2940004B4951 /* FileWithExpenses.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileWithExpenses.hpp; sourceTree = "<group>"; };
 		4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuxiliaryMethods.cpp; sourceTree = "<group>"; };
 		4DFCA6AD24279B4F00427FD7 /* AuxiliaryMethods.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AuxiliaryMethods.hpp; sourceTree = "<group>"; };
 		4DFCA6B02427ADD900427FD7 /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugiconfig.hpp; sourceTree = "<group>"; };
@@ -70,6 +76,10 @@
 		4D80F1C624229C7B0058FDFB = {
 			isa = PBXGroup;
 			children = (
+				4D8EBC3B242D2940004B4951 /* FileWithExpenses.cpp */,
+				4D8EBC3C242D2940004B4951 /* FileWithExpenses.hpp */,
+				4D8EBC38242D26A7004B4951 /* Expense.cpp */,
+				4D8EBC39242D26A7004B4951 /* Expense.hpp */,
 				4D8EBC35242CB16C004B4951 /* FileWithIncomes.cpp */,
 				4D8EBC36242CB16C004B4951 /* FileWithIncomes.hpp */,
 				4D8EBC32242A1EBB004B4951 /* PocketMenager.cpp */,
@@ -168,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8EBC3D242D2940004B4951 /* FileWithExpenses.cpp in Sources */,
 				4D8EBC37242CB16C004B4951 /* FileWithIncomes.cpp in Sources */,
 				4D80F1DD24229D750058FDFB /* main.cpp in Sources */,
 				4D80F1E924229F820058FDFB /* FileWithUser.cpp in Sources */,
@@ -178,6 +189,7 @@
 				4D8EBC34242A1EBB004B4951 /* PocketMenager.cpp in Sources */,
 				4D8EBC31242A1C8D004B4951 /* Income.cpp in Sources */,
 				4D80F1EC2422A1040058FDFB /* User.cpp in Sources */,
+				4D8EBC3A242D26A7004B4951 /* Expense.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

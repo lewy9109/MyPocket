@@ -8,7 +8,7 @@
 
 #include "AuxiliaryMethods.hpp"
 
-string AuxiliaryMethods::convertIntToString(int number)
+string AuxiliaryMethods::convertDoubleToString(double number)
 {
     ostringstream ss;       
     ss << number;
@@ -102,9 +102,9 @@ string AuxiliaryMethods::setCurrentDateOfTheOperation()
     int dayInt =  nowLocal.tm_mday;
 
     string day, month, year, fulldate;
-    year = convertIntToString(yearInt);
-    month = convertIntToString(monthInt);
-    day = convertIntToString(dayInt);
+    year = convertDoubleToString(yearInt);
+    month = convertDoubleToString(monthInt);
+    day = convertDoubleToString(dayInt);
 
     fulldate = year + "-" + month + "-" + day;
 

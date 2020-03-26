@@ -20,7 +20,7 @@ class AuxiliaryMethods
 {
     bool checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsAnInteger, int dayAsAnInteger);
 public:
-    static string convertIntToString(int number);
+    static string convertDoubleToString(double number);
     static int convertStringToInt(string number);
     
     string wczytajLinie();

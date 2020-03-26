@@ -29,7 +29,7 @@ void FileWithIncomes::addIncomeToFile(Income income)
         pugi::xml_node item = Uzytkownik.append_child("item");
         item.append_child(pugi::node_pcdata).set_value(income.getItem().c_str());
         pugi::xml_node amount = Uzytkownik.append_child("amount");
-        amount.append_child(pugi::node_pcdata).set_value(to_string(income.getAmount()).c_str());
+        amount.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(income.getAmount()).c_str());
         
         bool saveSucceeded = doc.save_file(getNameFile().c_str());
         assert(saveSucceeded);
@@ -40,15 +40,15 @@ void FileWithIncomes::addIncomeToFile(Income income)
         pugi::xml_node Uzytkownik = root.append_child("wplyw");
         
         pugi::xml_node inconeId = Uzytkownik.append_child("inconeId");
-        inconeId.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertIntToString(income.getIncomeId()).c_str());
+        inconeId.append_child(pugi::node_pcdata).set_value(to_string(income.getIncomeId()).c_str());
         pugi::xml_node userId = Uzytkownik.append_child("userId");
-        userId.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertIntToString(income.getUserId()).c_str());
+        userId.append_child(pugi::node_pcdata).set_value(to_string(income.getUserId()).c_str());
         pugi::xml_node date = Uzytkownik.append_child("date");
         date.append_child(pugi::node_pcdata).set_value(income.getDate().c_str());
         pugi::xml_node item = Uzytkownik.append_child("item");
         item.append_child(pugi::node_pcdata).set_value(income.getItem().c_str());
         pugi::xml_node amount = Uzytkownik.append_child("amount");
-        amount.append_child(pugi::node_pcdata).set_value(to_string(income.getAmount()).c_str());
+        amount.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(income.getAmount()).c_str());
 
         bool saveSucceeded = doc.save_file(getNameFile().c_str());
         assert(saveSucceeded);
@@ -77,6 +77,7 @@ vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int loggedInU
         income.setAmount(tool.child("amount").text().as_double());
         incomes.push_back(income);
     }
-    return incomes;
+        return incomes;
 }
+
 

@@ -22,7 +22,7 @@ void FileWithUser::addUserToFileXML(User user)
         pugi::xml_node Uzytkownik = root.append_child("Uzytkownik");
            
        pugi::xml_node id = Uzytkownik.append_child("ID");
-       id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertIntToString(user.getId()).c_str());
+       id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(user.getId()).c_str());
        pugi::xml_node name = Uzytkownik.append_child("Name");
        name.append_child(pugi::node_pcdata).set_value(user.getName().c_str());
        pugi::xml_node surName = Uzytkownik.append_child("Surname");
@@ -42,7 +42,7 @@ void FileWithUser::addUserToFileXML(User user)
     pugi::xml_node Uzytkownik = root.append_child("Uzytkownik");
     
     pugi::xml_node id = Uzytkownik.append_child("ID");
-    id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertIntToString(user.getId()).c_str());
+    id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(user.getId()).c_str());
     pugi::xml_node name = Uzytkownik.append_child("Name");
     name.append_child(pugi::node_pcdata).set_value(user.getName().c_str());
     pugi::xml_node surName = Uzytkownik.append_child("Surname");
@@ -93,7 +93,7 @@ void FileWithUser::saveAllUseresToFile(vector <User> &users)
     for (vector<User>::iterator itr = users.begin(); itr != users.end(); itr++)
     {
         pugi::xml_node id = Uzytkownik.append_child("ID");
-        id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertIntToString(itr->getId()).c_str());
+        id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(itr->getId()).c_str());
         pugi::xml_node name = Uzytkownik.append_child("Name");
         name.append_child(pugi::node_pcdata).set_value(itr->getName().c_str());
         pugi::xml_node surName = Uzytkownik.append_child("Surname");

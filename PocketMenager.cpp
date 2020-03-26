@@ -17,17 +17,40 @@ void PocketMenager::addIncome()
     
     date = setTheDateOfTheFinancialOperation(pick);
     
-    if (date == "0") {
+    if (date == "0")
+    {
             cout << "The date is incorrect." << endl;
-    system("pause");
+    //system("pause");// zrobic pauze
     return;
-        } else {
-            income = addDetailsOfTheIncome(date);
-            incomes.push_back(income);
-            fileWithIncomes.addIncomeToFile(income);
-            cout << "Income has been added." << endl;
-    system("pause");
-        }
+    } else
+    {
+        income = addDetailsOfTheIncome(date);
+        incomes.push_back(income);
+        fileWithIncomes.addIncomeToFile(income);
+        cout << "Income has been added." << endl;
+//  system("pause");
+    }
+}
+void PocketMenager::addExpense()
+{
+    Expense expense;
+    system("cls");
+    char pick = 2;
+    string date;
+    pick = menuDate(pick);
+    date = setTheDateOfTheFinancialOperation(pick);
+    if (date == "0") {
+        cout << "The date is incorrect." << endl;
+       // system("pause");
+        return;
+    } else {
+        expense = addDetailsOfTheExpense(date);
+        expenses.push_back(expense);
+        
+        fileWithExpenses.addExpenseToFile(expense); 
+        cout << "Expense has been added." << endl;
+     //   system("pause");
+    }
 }
 char PocketMenager::menuDate(char pick)
 {
@@ -79,6 +102,29 @@ Income PocketMenager::addDetailsOfTheIncome(string dateOfTheExpense)
     
     return income;
 }
+Expense PocketMenager::addDetailsOfTheExpense(string dateOfTheExpense)
+{
+    Expense expense;
+    string nameOfTheExpense;
+    string amountOfExpense;
+
+    expense.setExpenseId(fileWithExpenses.getTheIdOfLastExpense() + 1);
+
+    expense.setUserId(LOGGING_USER_ID);
+
+    expense.setDate(dateOfTheExpense);
+
+    cout << "Wprowadz nazwe wydatku: ";
+    cin >> nameOfTheExpense;
+    expense.setItem(nameOfTheExpense);
+
+    cout << "Wprowadz wartosc: ";
+    cin >> amountOfExpense;
+    double amountOfExpenseAsDouble = checkFormatAndChangeIntoDouble(amountOfExpense);
+    expense.setAmount(amountOfExpenseAsDouble);
+
+    return expense;
+}
 
 double PocketMenager::checkFormatAndChangeIntoDouble (string amount)    
 {
@@ -91,3 +137,4 @@ double amountAsADouble;
     ss >> amountAsADouble;
 return amountAsADouble;
 }
+

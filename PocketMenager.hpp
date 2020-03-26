@@ -14,27 +14,32 @@
 #include <vector>
 #include <algorithm>
 #include "Income.hpp"
+#include "Expense.hpp"
 #include "AuxiliaryMethods.hpp"
 #include "FileWithIncomes.hpp"
+#include "FileWithExpenses.hpp"
 using namespace std;
 class PocketMenager     
 {
-    int LOGGING_USER_ID;
+    const int LOGGING_USER_ID;
     vector <Income> incomes;
+    vector <Expense> expenses;
     char menuDate(char pick);
     string setTheDateOfTheFinancialOperation (char choice);
     Income addDetailsOfTheIncome(string dateOfTheExpense);
+    Expense addDetailsOfTheExpense(string dateOfTheExpense);
     double checkFormatAndChangeIntoDouble (string amount);
     AuxiliaryMethods auxiliaryMethods;
     FileWithIncomes fileWithIncomes;
+    FileWithExpenses fileWithExpenses;
 public:
-    PocketMenager (string nameOfTheFileWithIncomes) :
-        fileWithIncomes(nameOfTheFileWithIncomes) {
-        LOGGING_USER_ID = 0;
+    PocketMenager (string nameOfTheFileWithIncomes, string nameOfTheFileWithExpenses,  int loggingUserId) :
+        fileWithIncomes(nameOfTheFileWithIncomes), fileWithExpenses(nameOfTheFileWithExpenses), LOGGING_USER_ID(loggingUserId) {
         incomes = fileWithIncomes.loadIncomesOfLoggedInUserFromFile(LOGGING_USER_ID);
-        //expenses = fileWithExpenses.loadExpensesOfLoggedInUserFromFile(loggedInUserId);
+        expenses = fileWithExpenses.loadExpenseOfLoggedInUserFromFile(LOGGING_USER_ID);
     };
    // AuxiliaryMethods auxiliaryMethods;
     void addIncome();
+    void addExpense();
 };
 #endif /* PocketMenager_hpp */

@@ -16,7 +16,6 @@
 #include "AuxiliaryMethods.hpp"
 #include "File.h"
 #include <vector>
-#include <math.h>
 using namespace std;
 class FileWithIncomes : File    
 {
@@ -30,6 +29,6 @@ public:
     };
     void addIncomeToFile(Income income);
     int getTheIdOfLastIncome();
-    vector <Income> loadIncomesOfLoggedInUserFromFile(int loggedInUserId);
+    vector <Income> loadIncomesOfLoggedInUserFromFile(int LOGGING_USER_ID);
 };
 #endif /* FileWithIncomes_hpp */
