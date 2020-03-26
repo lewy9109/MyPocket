@@ -90,7 +90,6 @@ void FileWithUser::saveAllUseresToFile(vector <User> &users)
     auto root = doc.append_child("Uzytkownicy"); // tworznie nowego pliku z galezia glowna
     pugi::xml_node Uzytkownik = root.append_child("Uzytkownik");
       
-    
     for (vector<User>::iterator itr = users.begin(); itr != users.end(); itr++)
     {
         pugi::xml_node id = Uzytkownik.append_child("ID");

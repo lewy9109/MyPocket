@@ -25,6 +25,7 @@ int AuxiliaryMethods::convertStringToInt(string number)
 }
 string AuxiliaryMethods::wczytajLinie()
 {
+    
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
@@ -84,4 +85,103 @@ void AuxiliaryMethods::changeNameFile(string oldName, string newName)
     if (rename(oldName.c_str(), newName.c_str()) == 0) {}
     else
         cout << "Nazwa pliku nie zostala zmieniona." << oldName << endl;
+}
+
+string AuxiliaryMethods::setCurrentDateOfTheOperation()
+{
+
+    time_t now;
+    struct tm nowLocal;
+
+    now = time(NULL);
+
+    nowLocal = *localtime(&now);
+
+    int yearInt = nowLocal.tm_year + 1900;
+    int monthInt = nowLocal.tm_mon;
+    int dayInt =  nowLocal.tm_mday;
+
+    string day, month, year, fulldate;
+    year = convertIntToString(yearInt);
+    month = convertIntToString(monthInt);
+    day = convertIntToString(dayInt);
+
+    fulldate = year + "-" + month + "-" + day;
+
+    return fulldate;
+}
+string AuxiliaryMethods::setUsersDateOfTheOperation()
+{
+    cout << "Please enter the date (yyyy-mm-dd): ";
+    string date;
+    cin >> date;
+    if (date.length() < 10) {
+        date = "0";
+        return date;
+    }
+    string year = date.substr( 0, 4);
+    int yearAsAnInteger;
+    istringstream strYear(year);
+    strYear >> yearAsAnInteger;
+    string month = date.substr( 5, 2);
+    int monthAsAnInteger;
+    istringstream strMonth(month);
+    strMonth >> monthAsAnInteger;
+    string day = date.substr( 8, 2);
+    int dayAsAnInteger;
+    istringstream strDay(day);
+    strDay >> dayAsAnInteger;
+    bool hasTheDateCorrectFormat = checkTheFormatOfTheDate(yearAsAnInteger, monthAsAnInteger, dayAsAnInteger);
+    if (hasTheDateCorrectFormat == true) {
+        return date;
+    } else {
+        date = "0";
+        return date;
+    }
+}
+
+bool AuxiliaryMethods::checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsAnInteger, int dayAsAnInteger)
+{
+    bool hasTheDateCorrectFormat = true;
+    switch(monthAsAnInteger) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        if (dayAsAnInteger < 1 || dayAsAnInteger > 31) {
+            hasTheDateCorrectFormat = false;
+            return hasTheDateCorrectFormat;
+        }
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        if (dayAsAnInteger < 1 || dayAsAnInteger > 30) {
+            hasTheDateCorrectFormat = false;
+            return hasTheDateCorrectFormat;
+        }
+        break;
+    case 2:
+        if (((yearAsAnInteger%4 == 0) && (yearAsAnInteger%100 != 0)) || (yearAsAnInteger%400 == 0)) {
+            if (dayAsAnInteger < 1 || dayAsAnInteger > 29) {
+                hasTheDateCorrectFormat = false;
+                return hasTheDateCorrectFormat;
+            }
+        } else {
+            if (dayAsAnInteger < 1 || dayAsAnInteger > 28) {
+                hasTheDateCorrectFormat = false;
+                return hasTheDateCorrectFormat;
+            }
+        }
+        break;
+    }
+    if ((yearAsAnInteger < 2000) || (monthAsAnInteger < 1) || (monthAsAnInteger > 12)) {
+        hasTheDateCorrectFormat = false;
+        return hasTheDateCorrectFormat;
+    }
+    return hasTheDateCorrectFormat;
 }

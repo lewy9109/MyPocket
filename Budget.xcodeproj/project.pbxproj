@@ -12,6 +12,9 @@
 		4D80F1E624229F5A0058FDFB /* UserMenager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D80F1E424229F5A0058FDFB /* UserMenager.cpp */; };
 		4D80F1E924229F820058FDFB /* FileWithUser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D80F1E724229F820058FDFB /* FileWithUser.cpp */; };
 		4D80F1EC2422A1040058FDFB /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D80F1EA2422A1040058FDFB /* User.cpp */; };
+		4D8EBC31242A1C8D004B4951 /* Income.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC2F242A1C8D004B4951 /* Income.cpp */; };
+		4D8EBC34242A1EBB004B4951 /* PocketMenager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC32242A1EBB004B4951 /* PocketMenager.cpp */; };
+		4D8EBC37242CB16C004B4951 /* FileWithIncomes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EBC35242CB16C004B4951 /* FileWithIncomes.cpp */; };
 		4DFCA6AE24279B4F00427FD7 /* AuxiliaryMethods.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */; };
 		4DFCA6B32427ADD900427FD7 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DFCA6B22427ADD900427FD7 /* pugixml.cpp */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,12 @@
 		4D80F1EA2422A1040058FDFB /* User.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = User.cpp; sourceTree = "<group>"; };
 		4D80F1EB2422A1040058FDFB /* User.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = User.hpp; sourceTree = "<group>"; };
 		4D8EBC2E24292CB4004B4951 /* File.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		4D8EBC2F242A1C8D004B4951 /* Income.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Income.cpp; sourceTree = "<group>"; };
+		4D8EBC30242A1C8D004B4951 /* Income.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Income.hpp; sourceTree = "<group>"; };
+		4D8EBC32242A1EBB004B4951 /* PocketMenager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PocketMenager.cpp; sourceTree = "<group>"; };
+		4D8EBC33242A1EBB004B4951 /* PocketMenager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PocketMenager.hpp; sourceTree = "<group>"; };
+		4D8EBC35242CB16C004B4951 /* FileWithIncomes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileWithIncomes.cpp; sourceTree = "<group>"; };
+		4D8EBC36242CB16C004B4951 /* FileWithIncomes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileWithIncomes.hpp; sourceTree = "<group>"; };
 		4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuxiliaryMethods.cpp; sourceTree = "<group>"; };
 		4DFCA6AD24279B4F00427FD7 /* AuxiliaryMethods.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AuxiliaryMethods.hpp; sourceTree = "<group>"; };
 		4DFCA6B02427ADD900427FD7 /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugiconfig.hpp; sourceTree = "<group>"; };
@@ -61,7 +70,12 @@
 		4D80F1C624229C7B0058FDFB = {
 			isa = PBXGroup;
 			children = (
-				4DFCA6AF2427ADD900427FD7 /* pugi */,
+				4D8EBC35242CB16C004B4951 /* FileWithIncomes.cpp */,
+				4D8EBC36242CB16C004B4951 /* FileWithIncomes.hpp */,
+				4D8EBC32242A1EBB004B4951 /* PocketMenager.cpp */,
+				4D8EBC33242A1EBB004B4951 /* PocketMenager.hpp */,
+				4D8EBC2F242A1C8D004B4951 /* Income.cpp */,
+				4D8EBC30242A1C8D004B4951 /* Income.hpp */,
 				4DFCA6AC24279B4F00427FD7 /* AuxiliaryMethods.cpp */,
 				4DFCA6AD24279B4F00427FD7 /* AuxiliaryMethods.hpp */,
 				4D80F1EA2422A1040058FDFB /* User.cpp */,
@@ -74,6 +88,7 @@
 				4D80F1E224229F2E0058FDFB /* MyPocket.hpp */,
 				4D8EBC2E24292CB4004B4951 /* File.h */,
 				4D80F1DC24229D750058FDFB /* main.cpp */,
+				4DFCA6AF2427ADD900427FD7 /* pugi */,
 				4D80F1D024229C7B0058FDFB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,12 +168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8EBC37242CB16C004B4951 /* FileWithIncomes.cpp in Sources */,
 				4D80F1DD24229D750058FDFB /* main.cpp in Sources */,
 				4D80F1E924229F820058FDFB /* FileWithUser.cpp in Sources */,
 				4D80F1E624229F5A0058FDFB /* UserMenager.cpp in Sources */,
 				4DFCA6AE24279B4F00427FD7 /* AuxiliaryMethods.cpp in Sources */,
 				4DFCA6B32427ADD900427FD7 /* pugixml.cpp in Sources */,
 				4D80F1E324229F2E0058FDFB /* MyPocket.cpp in Sources */,
+				4D8EBC34242A1EBB004B4951 /* PocketMenager.cpp in Sources */,
+				4D8EBC31242A1C8D004B4951 /* Income.cpp in Sources */,
 				4D80F1EC2422A1040058FDFB /* User.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

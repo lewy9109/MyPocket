@@ -6,16 +6,19 @@
 //  Copyright © 2020 Krystian Lewandowski. All rights reserved.
 //
 
-#ifndef HelpfullMetods_HPP
-#define HelpfullMetods_HPP
+#ifndef AuxiliaryMethods_HPP
+#define AuxiliaryMethods_HPP
 
 #include <iostream>
 #include <sstream>
 #include <algorithm>
+#include <ctime>
+
 using namespace std;
 
 class AuxiliaryMethods
 {
+    bool checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsAnInteger, int dayAsAnInteger);
 public:
     static string convertIntToString(int number);
     static int convertStringToInt(string number);
@@ -27,7 +30,9 @@ public:
     char wczytajZnak();
     void deleteFile(string nameFileWithEnlargement);
     void changeNameFile(string oldName, string newName);
+    string setCurrentDateOfTheOperation();
+    string setUsersDateOfTheOperation();
     
     
 };
-#endif /* MetodyPomocnicze_hpp */
+#endif

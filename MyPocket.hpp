@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "UserMenager.hpp"
+#include "PocketMenager.hpp"
 using namespace std;
 
 class MyPocket

@@ -19,7 +19,6 @@ public:
  
     File(string nameFile) : NAME_FILE(nameFile) {
     }
- 
     string getNameFile()
     {
         return NAME_FILE;
