@@ -7,25 +7,15 @@
 //
 
 #include <iostream>
-#include "UserMenager.hpp"
-
-#include "pugixml.hpp"
-#include "User.hpp"
-#include <vector>
-#include "MyPocket.hpp"
+#include "PocketMenager.hpp"
 using namespace std;
 int main()
 {
+    PocketMenager pocket("Income");     
+    pocket.addIncome();
     
-    
-    UserMenager user ("Users");
-
-    user.loggingUser(); 
-    user.wyswietl();
-    user.changePassworgLoggedUser();
- 
-        
-    return 0;   
+  
+    return 0;
 }
 
 
