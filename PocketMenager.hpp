@@ -26,7 +26,6 @@ class PocketMenager
     const int LOGGING_USER_ID;
     vector <Income> incomes;
     vector <Expense> expenses;
-    //vector <User> users;    
     AuxiliaryMethods auxiliaryMethods;
     FileWithIncomes fileWithIncomes;
     FileWithExpenses fileWithExpenses;
@@ -37,8 +36,6 @@ class PocketMenager
     double checkFormatAndChangeIntoDouble (string amount);
     vector <Income> loadIncomesOnlyFromCurrentMonth();
     vector <Expense> loadExpensesOnlyFromCurrentMonth();
-    //vector <Income> sortIncomesFromSelectedPeriodOfTime(vector <Income> incomes);
-    //vector <Expense> sortExpensesFromSelectedPeriodOfTime(vector <Expense> expenses);
     vector <Income> loadIncomesOnlyFromPreviousMonth();
     vector <Expense> loadExpensesOnlyFromPreviousMonth();
     vector <Expense> loadExpensesOnlyFromPeriod(string startDate, string endDate);
