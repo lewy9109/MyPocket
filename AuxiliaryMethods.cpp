@@ -185,3 +185,47 @@ bool AuxiliaryMethods::checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsA
     }
     return hasTheDateCorrectFormat;
 }
+int AuxiliaryMethods::getCurrentYear()  
+{
+    time_t now;
+    struct tm nowLocal;
+
+    now = time(NULL);
+
+    nowLocal = *localtime(&now);
+    int yearInt = nowLocal.tm_year + 1900;
+
+    return yearInt;
+}
+
+int AuxiliaryMethods::getCurrentMonth()
+{
+    time_t now;
+    struct tm nowLocal;
+
+    now = time(NULL);
+
+    nowLocal = *localtime(&now);
+    int monthInt = nowLocal.tm_mon;
+
+    return monthInt;
+}
+int AuxiliaryMethods::getYearFromOperationDate(string date)
+{
+    string year = date.substr( 0, 4);
+    int yearAsAnInteger;
+    istringstream strYear(year);
+    strYear >> yearAsAnInteger;
+
+    return yearAsAnInteger;
+}
+
+int AuxiliaryMethods::getMonthFromOperationDate(string date)
+{
+    string month = date.substr( 5, 2);
+    int monthAsAnInteger;
+    istringstream strMonth(month);
+    strMonth >> monthAsAnInteger;
+
+    return monthAsAnInteger;
+}

@@ -12,8 +12,7 @@ using namespace std;
 int main()
 {
     PocketMenager pocket("Income", "Expense", 3);
-   //1 pocket.addIncome();
-    pocket.addExpense();
+   
     
   
     return 0;   

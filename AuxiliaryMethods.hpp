@@ -32,7 +32,10 @@ public:
     void changeNameFile(string oldName, string newName);
     string setCurrentDateOfTheOperation();
     string setUsersDateOfTheOperation();
-    
+    int getCurrentYear();
+    int getCurrentMonth();
+    int getYearFromOperationDate(string date);
+    int getMonthFromOperationDate(string date);
     
 };
 #endif

@@ -108,23 +108,6 @@ int UserMenager::loggingUser()
     return 0;
 }
 
-void UserMenager::changePassworgLoggedUser()
-{
-    string newPassword = "";
-    cout << "Podaj nowe haslo: ";
-    cin >> newPassword;
-
-    for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++)
-    {
-        if (itr -> getId() == idLoggingUser)
-        {
-            itr -> setPassword(newPassword);
-            cout << "Haslo zostalo zmienione." << endl << endl;
-            usleep(2000000);
-        }
-    }
-    fileWithUser.saveAllUseresToFile(users);
-}
 
 bool UserMenager::isUserLogging()   
 {
@@ -141,4 +124,21 @@ void UserMenager::wyswietl()
     {
         cout << itr -> getId() << " " << itr -> getName() << endl;
     }
+}
+void UserMenager::changePassworgLoggedUser()
+{
+    string newPassword = "";
+    cout << "Podaj nowe haslo: ";
+    cin >> newPassword;
+
+    for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++)
+    {
+        if (itr -> getId() == idLoggingUser)
+        {
+            itr -> setPassword(newPassword);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            usleep(2000000);
+        }
+    }
+    fileWithUser.saveAllUseresToFile(users);
 }
