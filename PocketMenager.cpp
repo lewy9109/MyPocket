@@ -128,15 +128,16 @@ Expense PocketMenager::addDetailsOfTheExpense(string dateOfTheExpense)
 
 double PocketMenager::checkFormatAndChangeIntoDouble (string amount)    
 {
-size_t i = amount.find(",");
-if (i != string::npos)
-        amount.replace(i,1,".");
+    size_t i = amount.find(",");
+    if (i != string::npos)
+    amount.replace(i,1,".");
     stringstream ss;
-double amountAsADouble;
+    double amountAsADouble;
     ss << amount;
     ss >> amountAsADouble;
-return amountAsADouble;
+    return amountAsADouble;
 }
+
 void PocketMenager::showBalanceFromTheCurrentMonth()
 {
     cout << setprecision (2);   
@@ -145,8 +146,8 @@ void PocketMenager::showBalanceFromTheCurrentMonth()
     vector <Income> sortedIncomesFromCurrentMonth;
     system("cls");
     incomesFromCurrentMonth = loadIncomesOnlyFromCurrentMonth();
-    sortedIncomesFromCurrentMonth = sortIncomesFromSelectedPeriodOfTime(incomesFromCurrentMonth);   
-    displayIncomesFromSelectedPeriodOfTime(sortedIncomesFromCurrentMonth);
+   // sortedIncomesFromCurrentMonth = sortIncomesFromSelectedPeriodOfTime(incomesFromCurrentMonth);
+    displayIncomesFromSelectedPeriodOfTime(incomesFromCurrentMonth);
     double totalIncomes;
     totalIncomes = sumIncomes(incomesFromCurrentMonth);
     cout << "---------------------------------------" << endl;
@@ -154,8 +155,8 @@ void PocketMenager::showBalanceFromTheCurrentMonth()
     vector <Expense> expensesFromCurrentMonth;
     vector <Expense> sortedExpensesFromCurrentMonth;
     expensesFromCurrentMonth = loadExpensesOnlyFromCurrentMonth();
-    sortedExpensesFromCurrentMonth = sortExpensesFromSelectedPeriodOfTime(expensesFromCurrentMonth);
-    displayExpensesFromSelectedPeriodOfTime(sortedExpensesFromCurrentMonth);
+   // sortedExpensesFromCurrentMonth = sortExpensesFromSelectedPeriodOfTime(expensesFromCurrentMonth);
+    displayExpensesFromSelectedPeriodOfTime(expensesFromCurrentMonth);
     double totalExpenses;
     totalExpenses = sumExpenses(expensesFromCurrentMonth);
     cout << "---------------------------------------" << endl;
@@ -167,15 +168,16 @@ void PocketMenager::showBalanceFromTheCurrentMonth()
    // system("pause");
 }
 
-void PocketMenager::showBalanceFromThePreviousMonth() {
+void PocketMenager::showBalanceFromThePreviousMonth()
+{
     cout << setprecision (2);
     cout << fixed;
     vector <Income> incomesFromPreviousMonth;
     vector <Income> sortedIncomesFromPreviousMonth;
     system("cls");
     incomesFromPreviousMonth = loadIncomesOnlyFromPreviousMonth();
-    sortedIncomesFromPreviousMonth = sortIncomesFromSelectedPeriodOfTime(incomesFromPreviousMonth);
-    displayIncomesFromSelectedPeriodOfTime(sortedIncomesFromPreviousMonth);
+   // sortedIncomesFromPreviousMonth = sortIncomesFromSelectedPeriodOfTime(incomesFromPreviousMonth);
+    displayIncomesFromSelectedPeriodOfTime(incomesFromPreviousMonth);
     double totalIncomes;
     totalIncomes = sumIncomes(incomesFromPreviousMonth);
     cout << "---------------------------------------" << endl;
@@ -183,8 +185,8 @@ void PocketMenager::showBalanceFromThePreviousMonth() {
     vector <Expense> expensesFromPreviousMonth;
     vector <Expense> sortedExpensesFromPreviousMonth;
     expensesFromPreviousMonth = loadExpensesOnlyFromPreviousMonth();
-    sortedExpensesFromPreviousMonth = sortExpensesFromSelectedPeriodOfTime(expensesFromPreviousMonth);
-    displayExpensesFromSelectedPeriodOfTime(sortedExpensesFromPreviousMonth);
+   // sortedExpensesFromPreviousMonth = sortExpensesFromSelectedPeriodOfTime(expensesFromPreviousMonth);
+    displayExpensesFromSelectedPeriodOfTime(expensesFromPreviousMonth);
     double totalExpenses;
     totalExpenses = sumExpenses(expensesFromPreviousMonth);
     cout << "---------------------------------------" << endl;
@@ -195,7 +197,8 @@ void PocketMenager::showBalanceFromThePreviousMonth() {
     cout << "---------------------------------------" << endl;
    // system("pause");
 }
-void PocketMenager::showBalanceFromPeriod()
+
+void PocketMenager::showBalanceFromPeriod() 
 {
     cout << setprecision (2);
     cout << fixed;
@@ -214,27 +217,28 @@ void PocketMenager::showBalanceFromPeriod()
     if ((incomesFromPeriod.empty() == false) && (expensesFromPeriod.empty() == false)) {
         system("cls");
         vector <Income> sortedIncomesFromPeriod;
-        sortedIncomesFromPeriod = sortIncomesFromSelectedPeriodOfTime(incomesFromPeriod);
-        displayIncomesFromSelectedPeriodOfTime(sortedIncomesFromPeriod);
+       // sortedIncomesFromPeriod = sortIncomesFromSelectedPeriodOfTime(incomesFromPeriod);
+        displayIncomesFromSelectedPeriodOfTime(incomesFromPeriod);
         totalIncomes = sumIncomes(incomesFromPeriod);
         cout << "---------------------------------------" << endl;
-        cout << "TOTAL INCOMES: " << totalIncomes << endl;
+        cout << "WSZYTSKIE WPLYWY: " << totalIncomes << endl;
         vector <Expense> sortedExpensesFromPeriod;
-        sortedExpensesFromPeriod = sortExpensesFromSelectedPeriodOfTime(expensesFromPeriod);
-        displayExpensesFromSelectedPeriodOfTime(sortedExpensesFromPeriod);
+       // sortedExpensesFromPeriod = sortExpensesFromSelectedPeriodOfTime(expensesFromPeriod);
+        displayExpensesFromSelectedPeriodOfTime(expensesFromPeriod);
         totalExpenses = sumExpenses(expensesFromPeriod);
         cout << "---------------------------------------" << endl;
-        cout << "TOTAL EXPENSES: " << totalExpenses << endl << endl;
+        cout << "WSZYSTKIE KOSZTY: " << totalExpenses << endl << endl;
         balanceFromPeriod = sumIncomesAndExpenses(totalIncomes, totalExpenses);
         cout << "---------------------------------------" << endl;
-        cout << "BALANCE FROM SELECTED PERIOD: " << balanceFromPeriod << endl;
+        cout << "BILANS Z WYBRANEGO OKRESU: " << balanceFromPeriod << endl;
         cout << "---------------------------------------" << endl;
-        system("pause");
+       // system("pause");
     } else {
         cout << "No data to display. Please check dates for selected period." << endl;
-        system("pause");
+       // system("pause");
     }
 }
+
 vector <Income> PocketMenager::loadIncomesOnlyFromCurrentMonth()
 {
     Income income;
@@ -252,13 +256,15 @@ vector <Income> PocketMenager::loadIncomesOnlyFromCurrentMonth()
             income.setDate(itr -> getDate());
             income.setItem(itr -> getItem());
             income.setAmount(itr -> getAmount());
-            //income.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> downloadDate()));
+            income.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> getDate()));   
             incomesOnlyFromCurrentMonth.push_back(income);
         }
         itr++;
     }
     return incomesOnlyFromCurrentMonth;
 }
+///
+
 vector <Expense> PocketMenager::loadExpensesOnlyFromCurrentMonth()
 {
     Expense expense;
@@ -276,7 +282,7 @@ vector <Expense> PocketMenager::loadExpensesOnlyFromCurrentMonth()
             expense.setDate(itr -> getDate());
             expense.setItem(itr -> getItem());
             expense.setAmount(itr -> getAmount());
-            //expense.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> downloadDate()));
+            expense.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> getDate()));
             expensesOnlyFromCurrentMonth.push_back(expense);
         }
         itr++;
@@ -307,7 +313,7 @@ vector <Income> PocketMenager::loadIncomesOnlyFromPreviousMonth()
             income.setDate(itr -> getDate());
             income.setItem(itr -> getItem());
             income.setAmount(itr -> getAmount());
-            //income.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> downloadDate()));
+            income.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> getDate()));
             incomesOnlyFromPreviousMonth.push_back(income);
         }
         itr++;
@@ -338,14 +344,14 @@ vector <Expense> PocketMenager::loadExpensesOnlyFromPreviousMonth()
             expense.setDate(itr -> getDate());
             expense.setItem(itr -> getItem());
             expense.setAmount(itr -> getAmount());
-            //expense.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> downloadDate()));
+            expense.setDateAsUnixTime(auxiliaryMethods.changeDateFormatForUnixTime(itr -> getDate()));
             expensesOnlyFromPreviousMonth.push_back(expense);
         }
         itr++;
     }
     return expensesOnlyFromPreviousMonth;
 }
-/*
+
 vector <Income> PocketMenager::loadIncomesOnlyFromPeriod(string startDate, string endDate)
 {
     Income income;
@@ -368,15 +374,47 @@ vector <Income> PocketMenager::loadIncomesOnlyFromPeriod(string startDate, strin
             }
             itr++;
         }
-        return incomesOnlyFromPeriod;
     }
+    return incomesOnlyFromPeriod;
 }
-*/
+vector <Expense> PocketMenager::loadExpensesOnlyFromPeriod(string startDate, string endDate)
+{
+    Expense expense;
+    vector <Expense> expensesOnlyFromPeriod;
+    time_t startDateInUnixTime = auxiliaryMethods.changeDateFormatForUnixTime(startDate);
+    time_t endDateInUnixTime = auxiliaryMethods.changeDateFormatForUnixTime(endDate);
+    if ((endDateInUnixTime-startDateInUnixTime)>=0) {
+        vector <Expense>::iterator itr = expenses.begin();
+        while (itr != expenses.end()) {
+            string date = itr -> getDate();
+            int dateInUnixTime = auxiliaryMethods.changeDateFormatForUnixTime(date);
+            if (dateInUnixTime >= startDateInUnixTime && dateInUnixTime <= endDateInUnixTime) {
+                expense.setExpenseId(itr -> getExpenseId());
+                expense.setUserId(itr -> getUserId());
+                expense.setDate(itr -> getDate());
+                expense.setItem(itr -> getItem());
+                expense.setAmount(itr -> getAmount());
+                expense.setDateAsUnixTime(dateInUnixTime);
+                expensesOnlyFromPeriod.push_back(expense);
+            }
+            itr++;
+        }
+        
+    }
+    return expensesOnlyFromPeriod;
+}
+/*
 vector <Income> PocketMenager::sortIncomesFromSelectedPeriodOfTime(vector <Income> incomes)
 {
-    sort(incomes.begin(),incomes.end());
+    sort(incomes.begin()->getIncomeId(),incomes.end()->getIncomeId());
     return incomes;
 }
+vector <Expense> PocketMenager::sortExpensesFromSelectedPeriodOfTime(vector <Expense> expenses)
+{
+    sort(expenses.begin()->getExpenseId(),expenses.end()->getExpenseId());
+    return expenses;
+}
+ */
 void PocketMenager::displayIncomesFromSelectedPeriodOfTime(vector <Income> incomes)
 {
     cout << "WPŁYWY:" << endl;
@@ -391,11 +429,6 @@ double PocketMenager::sumIncomes (vector <Income> incomes)
         totalIncomes += incomes.at(i).getAmount();
     }
     return totalIncomes;
-}
-vector <Expense> PocketMenager::sortExpensesFromSelectedPeriodOfTime(vector <Expense> expenses)
-{
-    sort(expenses.begin(),expenses.end());
-    return expenses;
 }
 void PocketMenager::displayExpensesFromSelectedPeriodOfTime(vector <Expense> expenses)
 {
@@ -417,3 +450,4 @@ double PocketMenager::sumIncomesAndExpenses (double incomes, double expenses)
     double balance = incomes - expenses;
     return balance;
 }
+

@@ -20,7 +20,7 @@ class Expense {
     string date;
     string item;
     double amount;
-   // int dateAsUnixTime;
+    int dateAsUnixTime;
 
 public:
     void setExpenseId (int newExpenseId);
@@ -28,14 +28,14 @@ public:
     void setDate (string newDate);
     void setItem (string newItem);
     void setAmount (double newAmount);
-   // void setDateAsUnixTime (int newDateAsUnixTime);
+    void setDateAsUnixTime (int newDateAsUnixTime);
 
     int getExpenseId();
     int getUserId();
     string getDate();
     string getItem();
     double getAmount();
-  //  int downloadDateAsUnixTime() const;
+    int getDateAsUnixTime();
 };
 
 #endif /* Expense_hpp */

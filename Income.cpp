@@ -24,11 +24,11 @@ void Income::setItem (string newItem) {
 void Income::setAmount (double newAmount) {
     amount = newAmount;
 }
-/*
-void Income::setDateAsUnixTime (int newDateAsUnixTime) {
+
+void Income::setDateAsUnixTime (int newDateAsUnixTime) {    
     dateAsUnixTime = newDateAsUnixTime;
 }
- */
+
 
 int Income::getIncomeId() {
     return incomeId;
@@ -45,8 +45,9 @@ string Income::getItem() {
 double Income::getAmount() {
     return amount;
 }
-/*
-int Income::getDateAsUnixTime() const {
+
+int Income::getDateAsUnixTime()
+{
     return dateAsUnixTime;
 }
- */
+

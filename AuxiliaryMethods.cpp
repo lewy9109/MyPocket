@@ -229,3 +229,28 @@ int AuxiliaryMethods::getMonthFromOperationDate(string date)
 
     return monthAsAnInteger;
 }
+time_t AuxiliaryMethods::changeDateFormatForUnixTime (string date)  
+{
+    tm time;
+    string year = date.substr( 0, 4);
+    int yearAsAnInteger;
+    istringstream strYear(year);
+    strYear >> yearAsAnInteger;
+    time.tm_year = yearAsAnInteger-1900;
+    string month = date.substr( 5, 2);
+    int monthAsAnInteger;
+    istringstream strMonth(month);
+    strMonth >> monthAsAnInteger;
+    time.tm_mon = monthAsAnInteger-1;
+    string day = date.substr( 8, 2);
+    int dayAsAnInteger;
+    istringstream strDay(day);
+    strDay >> dayAsAnInteger;
+    time.tm_mday = dayAsAnInteger;
+    time.tm_hour = 0;
+    time.tm_min = 0;
+    time.tm_sec = 0;
+    time_t timestamp = mktime(&time);
+
+    return timestamp;
+}

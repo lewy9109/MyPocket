@@ -19,7 +19,7 @@ class Income
     string date;
     string item;
     double amount;
-    //int dateAsUnixTime;
+    int dateAsUnixTime;
     
 public:
     void setIncomeId (int newIncomeId);
@@ -27,14 +27,14 @@ public:
     void setDate (string newDate);
     void setItem (string newItem);
     void setAmount (double newAmount);
-   // void setDateAsUnixTime (int newDateAsUnixTime);
+    void setDateAsUnixTime (int newDateAsUnixTime);
 
     int getIncomeId();
     int getUserId();
     string getDate();
     string getItem();
     double getAmount();
-    //int getDateAsUnixTime() const;
+    int getDateAsUnixTime();
 };
 
 #endif /* Income_hpp */

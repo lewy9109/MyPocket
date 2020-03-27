@@ -36,6 +36,7 @@ public:
     int getCurrentMonth();
     int getYearFromOperationDate(string date);
     int getMonthFromOperationDate(string date);
-    
+    time_t changeDateFormatForUnixTime (string date);
+
 };
 #endif

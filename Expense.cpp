@@ -28,12 +28,12 @@ void Expense::setAmount (double newAmount)
 {
     amount = newAmount;
 }
-/*
+
 void Expense::setDateAsUnixTime (int newDateAsUnixTime)
  {
     dateAsUnixTime = newDateAsUnixTime;
 }
-*/
+
 int Expense::getExpenseId()
 {
     return expenseId;
@@ -54,9 +54,10 @@ double Expense::getAmount()
 {
     return amount;
 }
-/*
-int Expense::getDateAsUnixTime() const {
+
+int Expense::getDateAsUnixTime() 
+{
     return dateAsUnixTime;
 }
-*/
+
  

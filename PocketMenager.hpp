@@ -10,15 +10,13 @@
 #define PocketMenager_hpp
 
 #include <stdio.h>
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <iomanip>
 #include <unistd.h>
 #include "Income.hpp"
 #include "Expense.hpp"
-//#include "User.hpp"
-//#include "FileWithUser.hpp"
 #include "AuxiliaryMethods.hpp"
 #include "FileWithIncomes.hpp"
 #include "FileWithExpenses.hpp"
@@ -39,10 +37,11 @@ class PocketMenager
     double checkFormatAndChangeIntoDouble (string amount);
     vector <Income> loadIncomesOnlyFromCurrentMonth();
     vector <Expense> loadExpensesOnlyFromCurrentMonth();
-    vector <Income> sortIncomesFromSelectedPeriodOfTime(vector <Income> incomes);
-    vector <Expense> sortExpensesFromSelectedPeriodOfTime(vector <Expense> expenses);
+    //vector <Income> sortIncomesFromSelectedPeriodOfTime(vector <Income> incomes);
+    //vector <Expense> sortExpensesFromSelectedPeriodOfTime(vector <Expense> expenses);
     vector <Income> loadIncomesOnlyFromPreviousMonth();
     vector <Expense> loadExpensesOnlyFromPreviousMonth();
+    vector <Expense> loadExpensesOnlyFromPeriod(string startDate, string endDate);
     vector <Income> loadIncomesOnlyFromPeriod(string startDate, string endDate);
     void displayExpensesFromSelectedPeriodOfTime(vector <Expense> expenses);
     void displayIncomesFromSelectedPeriodOfTime(vector <Income> incomes);
