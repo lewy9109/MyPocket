@@ -74,7 +74,7 @@ int UserMenager::loggingUser()
     string login = "", password = "";
 
     cout << endl << "Podaj login: ";
-    login = aluxiliaryMethods.wczytajLinie();
+    login = aluxiliaryMethods.loadLine();
 
     vector <User>::iterator itr = users.begin();
     while (itr != users.end())
@@ -84,7 +84,7 @@ int UserMenager::loggingUser()
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                password = aluxiliaryMethods.wczytajLinie();
+                password = aluxiliaryMethods.loadLine();
 
                 if (itr -> getPassword() == password)
                 {

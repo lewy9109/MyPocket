@@ -59,7 +59,7 @@ char PocketMenager::menuDate(char pick)
     cout << "2. Wprowadz inna date"      << endl;
     
     while (pick == 1 || pick == 2) {
-        pick = auxiliaryMethods.wczytajZnak();
+        pick = auxiliaryMethods.getChar();
     }
     return pick;
 }

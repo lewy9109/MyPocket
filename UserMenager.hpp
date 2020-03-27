@@ -10,7 +10,7 @@
 #define UserMenager_hpp
 
 #include <stdio.h>
-//#include <iostream>
+#include <iostream>
 #include <unistd.h>
 #include <vector>
 #include "User.hpp"

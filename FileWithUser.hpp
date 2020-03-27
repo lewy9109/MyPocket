@@ -13,12 +13,11 @@
 #include "File.h"
 #include "User.hpp"
 #include "AuxiliaryMethods.hpp"
-#include "pugixml.hpp"
+#include "pugi/pugixml.hpp"
 #include <vector>
 using namespace std;
 class FileWithUser : File
 {
-   // const string NAME_FILE;
 
 public:
     FileWithUser(string nameFileWithUser) : File(nameFileWithUser){};

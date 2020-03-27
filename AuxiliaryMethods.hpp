@@ -13,7 +13,6 @@
 #include <sstream>
 #include <algorithm>
 #include <ctime>
-
 using namespace std;
 
 class AuxiliaryMethods
@@ -23,11 +22,11 @@ public:
     static string convertDoubleToString(double number);
     static int convertStringToInt(string number);
     
-    string wczytajLinie();
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string text);
-    string pobierzLiczbe(string text, int pozycjaZnaku);
-    int wczytajLiczbeCalkowita();
-    char wczytajZnak();
+    string loadLine();
+    string changeFirstLetterToUpper(string text);
+    string getNumber(string text, int pozycjaZnaku);
+    int getIntegerNumber();
+    char getChar();
     void deleteFile(string nameFileWithEnlargement);
     void changeNameFile(string oldName, string newName);
     string setCurrentDateOfTheOperation();

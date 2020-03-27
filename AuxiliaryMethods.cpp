@@ -23,14 +23,14 @@ int AuxiliaryMethods::convertStringToInt(string number)
     iss >> liczbaInt;
     return liczbaInt;
 }
-string AuxiliaryMethods::wczytajLinie()
+string AuxiliaryMethods::loadLine()
 {
     
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
 }
-string AuxiliaryMethods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string text)
+string AuxiliaryMethods::changeFirstLetterToUpper(string text)
 {
     if (!text.empty())
     {
@@ -40,7 +40,7 @@ string AuxiliaryMethods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string text)
     return text;
 }
 
-int AuxiliaryMethods::wczytajLiczbeCalkowita()
+int AuxiliaryMethods::getIntegerNumber()
 {
     string wejscie = "";
     int liczba = 0;
@@ -56,7 +56,7 @@ int AuxiliaryMethods::wczytajLiczbeCalkowita()
     }
     return liczba;
 }
-char AuxiliaryMethods::wczytajZnak()
+char AuxiliaryMethods::getChar()
 {
     string wejscie = "";
     char znak  = {0};
