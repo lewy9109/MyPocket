@@ -142,3 +142,19 @@ void UserMenager::changePassworgLoggedUser()
     }
     fileWithUser.saveAllUseresToFile(users);
 }
+
+int UserMenager::downloadIdOfLoggedInUser()
+{
+    return idLoggingUser;
+}
+bool UserMenager::isUserLoggedIn()
+{
+    if (idLoggingUser > 0)
+        return true;
+    else
+        return false;
+}
+void UserMenager::logOut()
+{
+    idLoggingUser = 0;
+}

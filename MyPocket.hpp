@@ -9,8 +9,8 @@
 #ifndef MyPocket_hpp
 #define MyPocket_hpp
 
-#include <stdio.h>
 #include <iostream>
+#include <unistd.h>
 #include "UserMenager.hpp"
 #include "PocketMenager.hpp"
 using namespace std;
@@ -18,23 +18,27 @@ using namespace std;
 class MyPocket
 {
     UserMenager userMenager;
-   // AdresatMenager *adresatMenager;
+    PocketMenager *pocketMenager;
+    const string NAME_OF_FILE_WITH_INCOMES;
+    const string NAME_OF_FILE_WITH_EXPENCES;
 public:
-    MyPocket(string nameFileWithUser /*, string nazwaPlikuZAdresatami*/) : userMenager(nameFileWithUser) /*, NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)*/
-       {
-          // adresatMenager = NULL;
-       };
-    /*
-    ~KsiazkaAdresowa()  
-       {
-           delete adresatMenager;
-           adresatMenager = NULL;
-       };
-     */
-    void registerUaer();
+    MyPocket (string nameOfFileWithUsers, string nameOfFileWithIncomes, string nameOfFileWithExpences) :
+        userMenager(nameOfFileWithUsers), NAME_OF_FILE_WITH_INCOMES (nameOfFileWithIncomes), NAME_OF_FILE_WITH_EXPENCES (nameOfFileWithExpences) {
+            pocketMenager = NULL;
+        };
+    ~MyPocket() {
+        delete pocketMenager;
+    }
+    bool isUserLoggedIn();
+    void singInUser();
     void loggingUser();
-   // void changePassworgLoggedUser();
-
+    void changePassword();
+    void logOut();
+    void addIncome();
+    void addExpense();
+    void showBalanceFromTheCurrentMonth();
+    void showBalanceFromThePreviousMonth();
+    void showBalanceFromPeriod();
 };
 
 #endif /* MyPocket_hpp */
