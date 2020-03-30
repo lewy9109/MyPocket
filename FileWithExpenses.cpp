@@ -31,8 +31,9 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
         pugi::xml_node amount = Uzytkownik.append_child("amount");
         amount.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(expense.getAmount()).c_str());
         
-        bool saveSucceeded = doc.save_file(getNameFile().c_str());
-        assert(saveSucceeded);
+       // bool saveSucceeded = doc.save_file(getNameFile().c_str());
+       // assert(saveSucceeded);
+        doc.save_file(getNameFile().c_str());
     }
     else
     {
@@ -50,8 +51,9 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
         pugi::xml_node amount = Uzytkownik.append_child("amount");
         amount.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(expense.getAmount()).c_str());
 
-        bool saveSucceeded = doc.save_file(getNameFile().c_str());
-        assert(saveSucceeded);
+       // bool saveSucceeded = doc.save_file(getNameFile().c_str());
+       //1 assert(saveSucceeded);
+        doc.save_file(getNameFile().c_str());
     }
 }
 

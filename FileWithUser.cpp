@@ -33,8 +33,8 @@ void FileWithUser::addUserToFileXML(User user)
        password.append_child(pugi::node_pcdata).set_value(user.getPassword().c_str());
            
         //doc.print(std::cout); //wyswietlenie w terminalu;
-        bool saveSucceeded = doc.save_file(getNameFile().c_str());
-        assert(saveSucceeded);
+        doc.save_file(getNameFile().c_str());
+        //assert(saveSucceeded);
     }
     else
     {
@@ -53,8 +53,9 @@ void FileWithUser::addUserToFileXML(User user)
     password.append_child(pugi::node_pcdata).set_value(user.getPassword().c_str());
     
      //doc.print(std::cout); //wyswietlenie w terminalu;
-      bool saveSucceeded = doc.save_file(getNameFile().c_str());
-      assert(saveSucceeded);
+      //bool saveSucceeded = doc.save_file(getNameFile().c_str());
+      //assert(saveSucceeded);
+        doc.save_file(getNameFile().c_str());
     }
 }
 
@@ -105,8 +106,9 @@ void FileWithUser::saveAllUseresToFile(vector <User> &users)
     }
     
     //doc.print(std::cout); //wyswietlenie w terminalu;
-    bool saveSucceeded = doc.save_file("DocTemp");
-    assert(saveSucceeded);
+    //bool saveSucceeded = doc.save_file("DocTemp");
+    //assert(saveSucceeded);
+    doc.save_file("DocTemp");
     auxiliaryMethods.deleteFile(getNameFile().c_str());
     auxiliaryMethods.changeNameFile("DocTemp", getNameFile().c_str());
 }
