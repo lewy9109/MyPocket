@@ -84,7 +84,7 @@ Income PocketMenager::addDetailsOfTheIncome(string dateOfTheExpense)
     Income income;
     string nameOfTheIncome;
     string amountOfIncome;
-    income.setIncomeId(fileWithIncomes.getTheIdOfLastIncome() + 1);
+    income.setIncomeId(getTheIdOfLastIncome() + 1);
     income.setUserId(LOGGING_USER_ID);
     income.setDate(dateOfTheExpense);
     cin.clear();
@@ -104,7 +104,7 @@ Expense PocketMenager::addDetailsOfTheExpense(string dateOfTheExpense)
     string nameOfTheExpense;
     string amountOfExpense;
 
-    expense.setExpenseId(fileWithExpenses.getTheIdOfLastExpense() + 1);
+    expense.setExpenseId(getTheIdOfLastExpense() + 1);
 
     expense.setUserId(LOGGING_USER_ID);
 
@@ -159,7 +159,7 @@ void PocketMenager::showBalanceFromTheCurrentMonth()
     cout << "---------------------------------------" << endl;
     cout << "BILANS Z BIEZACEGO MIESIACA: " << balanceFromCurrentMonth << endl;
     cout << "---------------------------------------" << endl;
-    usleep(10000000);
+    auxiliaryMethods.pause();
 }
 
 void PocketMenager::showBalanceFromThePreviousMonth()
@@ -187,7 +187,7 @@ void PocketMenager::showBalanceFromThePreviousMonth()
     cout << "---------------------------------------" << endl;
     cout << "BILANS Z POPRZEDNIEGO MIESIACA: " << balanceFromPreviousMonth << endl;
     cout << "---------------------------------------" << endl;
-    usleep(10000000);
+    auxiliaryMethods.pause();
 }
 
 void PocketMenager::showBalanceFromPeriod() 
@@ -222,11 +222,10 @@ void PocketMenager::showBalanceFromPeriod()
         cout << "---------------------------------------" << endl;
         cout << "BILANS Z WYBRANEGO OKRESU: " << balanceFromPeriod << endl;
         cout << "---------------------------------------" << endl;
-        usleep(10000000);
+        auxiliaryMethods.pause();
     } else {
         cout << "Nie ma czego tu wyswietlac" << endl;
-       // system("pause");
-        usleep(3000000);
+       auxiliaryMethods.pause();
     }
 }
 
@@ -430,3 +429,21 @@ double PocketMenager::sumIncomesAndExpenses (double incomes, double expenses)
     return balance;
 }
 
+int PocketMenager::getTheIdOfLastIncome()
+{
+    vector<Income>::iterator itr;
+    for(itr=incomes.begin(); itr!=incomes.end(); itr++)
+    {
+        idOfLastIncome = itr -> getIncomeId();
+    }
+    return idOfLastIncome;
+}
+int PocketMenager::getTheIdOfLastExpense()
+{
+    vector<Expense>::iterator itr;
+    for(itr=expenses.begin(); itr!=expenses.end(); itr++)
+    {
+        idOfLastExpense = itr -> getExpenseId();
+    }
+    return idOfLastExpense;
+}

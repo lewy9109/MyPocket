@@ -28,7 +28,7 @@ public:
         idOfLastExpense = 0;
     };
     void addExpenseToFile(Expense expense);
-    int getTheIdOfLastExpense();
+   // int getTheIdOfLastExpense();
     vector <Expense> loadExpenseOfLoggedInUserFromFile(int LOGGING_USER_ID);
 };
 #endif /* FileWithExpenses_hpp */

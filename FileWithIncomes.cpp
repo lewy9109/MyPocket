@@ -56,10 +56,8 @@ void FileWithIncomes::addIncomeToFile(Income income)
         doc.save_file(getNameFile().c_str());
     }
 }
-int FileWithIncomes::getTheIdOfLastIncome()
-{
-    return idOfLastIncome;  
-}
+
+
 vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int loggedInUserId)
 {
     vector <Income> incomes;
@@ -78,6 +76,7 @@ vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int loggedInU
         income.setItem(tool.child("item").text().as_string());
         income.setAmount(tool.child("amount").text().as_double());
         incomes.push_back(income);
+        
     }
         return incomes;
 }

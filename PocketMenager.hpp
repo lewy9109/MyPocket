@@ -24,6 +24,8 @@ using namespace std;
 class PocketMenager     
 {
     const int LOGGING_USER_ID;
+    int idOfLastIncome;
+    int idOfLastExpense;
     vector <Income> incomes;
     vector <Expense> expenses;
     AuxiliaryMethods auxiliaryMethods;
@@ -45,6 +47,8 @@ class PocketMenager
     double sumIncomes (vector <Income> incomes);
     double sumExpenses (vector <Expense> expenses);
     double sumIncomesAndExpenses (double incomes, double expenses);
+    int getTheIdOfLastIncome();
+    int getTheIdOfLastExpense();
 
 public:
     PocketMenager (string nameOfTheFileWithIncomes, string nameOfTheFileWithExpenses,  int loggingUserId) :

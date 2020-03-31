@@ -254,3 +254,9 @@ time_t AuxiliaryMethods::changeDateFormatForUnixTime (string date)
 
     return timestamp;
 }
+void AuxiliaryMethods::pause()
+{
+    cin.clear();
+    cout << endl << "Press any key to continue...";
+    cin.ignore();
+}

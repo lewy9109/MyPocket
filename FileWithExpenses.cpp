@@ -57,11 +57,6 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
     }
 }
 
-int FileWithExpenses::getTheIdOfLastExpense()
-{
-    return idOfLastExpense;
-}
-
 vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int loggedInUserId)
 {
     vector <Expense> expenses;
