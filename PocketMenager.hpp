@@ -55,6 +55,8 @@ public:
         fileWithIncomes(nameOfTheFileWithIncomes), fileWithExpenses(nameOfTheFileWithExpenses), LOGGING_USER_ID(loggingUserId) {
         incomes = fileWithIncomes.loadIncomesOfLoggedInUserFromFile(LOGGING_USER_ID);
         expenses = fileWithExpenses.loadExpenseOfLoggedInUserFromFile(LOGGING_USER_ID);
+            idOfLastIncome = 0;
+            idOfLastExpense = 0;
     };
     void addIncome();
     void addExpense();
