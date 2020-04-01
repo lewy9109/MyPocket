@@ -84,7 +84,8 @@ Income PocketMenager::addDetailsOfTheIncome(string dateOfTheExpense)
     Income income;
     string nameOfTheIncome;
     string amountOfIncome;
-    income.setIncomeId(getTheIdOfLastIncome() + 1);
+    
+    income.setIncomeId(fileWithIncomes.getTheIdOfLastIncome() + 1); 
     income.setUserId(LOGGING_USER_ID);
     income.setDate(dateOfTheExpense);
     cin.clear();
@@ -103,13 +104,11 @@ Expense PocketMenager::addDetailsOfTheExpense(string dateOfTheExpense)
     Expense expense;
     string nameOfTheExpense;
     string amountOfExpense;
-
-    expense.setExpenseId(getTheIdOfLastExpense() + 1);
-
+    
+    expense.setExpenseId(fileWithExpenses.getTheIdOfLastExpense() + 1);
     expense.setUserId(LOGGING_USER_ID);
-
     expense.setDate(dateOfTheExpense);
-
+    cin.clear();
     cout << "Wprowadz nazwe wydatku: ";
     cin >> nameOfTheExpense;
     expense.setItem(nameOfTheExpense);
@@ -429,21 +428,3 @@ double PocketMenager::sumIncomesAndExpenses (double incomes, double expenses)
     return balance;
 }
 
-int PocketMenager::getTheIdOfLastIncome()
-{
-    vector<Income>::iterator itr;
-    for(itr=incomes.begin(); itr!=incomes.end(); itr++)
-    {
-        idOfLastIncome = itr -> getIncomeId();
-    }
-    return idOfLastIncome;
-}
-int PocketMenager::getTheIdOfLastExpense()
-{
-    vector<Expense>::iterator itr;
-    for(itr=expenses.begin(); itr!=expenses.end(); itr++)
-    {
-        idOfLastExpense = itr -> getExpenseId();
-    }
-    return idOfLastExpense;
-}

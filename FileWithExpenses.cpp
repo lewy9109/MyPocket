@@ -38,7 +38,7 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
     else
     {
         pugi::xml_node root = doc.document_element(); // dodawanie kolejnych uzytkownikow
-        pugi::xml_node Uzytkownik = root.append_child("wplyw");
+        pugi::xml_node Uzytkownik = root.append_child("Wydatek");
         
         pugi::xml_node inconeId = Uzytkownik.append_child("expenseId");
         inconeId.append_child(pugi::node_pcdata).set_value(to_string(expense.getExpenseId()).c_str());
@@ -74,7 +74,15 @@ vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int loggedI
         expense.setDate(tool.child("date").text().as_string());
         expense.setItem(tool.child("item").text().as_string());
         expense.setAmount(tool.child("amount").text().as_double());
+        
+        if (loggedInUserId == expense.getUserId())
         expenses.push_back(expense);
-    }
+        
+        idOfLastExpense = expense.getExpenseId();
+    }   
         return expenses;
+}
+int FileWithExpenses::getTheIdOfLastExpense()
+{
+    return idOfLastExpense;
 }

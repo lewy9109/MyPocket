@@ -55,6 +55,7 @@ void FileWithIncomes::addIncomeToFile(Income income)
        // assert(saveSucceeded);
         doc.save_file(getNameFile().c_str());
     }
+    idOfLastIncome ++;
 }
 
 
@@ -70,15 +71,26 @@ vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int loggedInU
 
     for (pugi::xml_node tool = selectedNode.child("wplyw"); tool; tool = tool.next_sibling("wplyw"))
     {
+        
         income.setIncomeId(tool.child("inconeId").text().as_int());
         income.setUserId(tool.child("userId").text().as_int());
         income.setDate(tool.child("date").text().as_string());
         income.setItem(tool.child("item").text().as_string());
         income.setAmount(tool.child("amount").text().as_double());
+        
+        if (loggedInUserId == income.getUserId())
         incomes.push_back(income);
         
+        idOfLastIncome = income.getIncomeId();
     }
         return incomes;
+}
+
+
+int FileWithIncomes::getTheIdOfLastIncome()
+{
+
+    return idOfLastIncome;
 }
 
 

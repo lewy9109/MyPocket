@@ -31,15 +31,16 @@ public:
         idLoggingUser = 0;
         users = fileWithUser.readUsersFromFile();
     };
+    
     int downloadIdOfLoggedInUser();
     bool isUserLoggedIn();
-    
-    
     void registerUaer();
     int loggingUser();
     void changePassworgLoggedUser();
     bool isUserLogging();
     void wyswietl();
     void logOut();
+    
+    
 };  
 #endif /* UserMenager_hpp */

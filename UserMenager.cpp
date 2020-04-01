@@ -158,3 +158,4 @@ void UserMenager::logOut()
 {
     idLoggingUser = 0;
 }
+

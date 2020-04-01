@@ -20,7 +20,9 @@ void MyPocket::loggingUser()
         pocketMenager = new PocketMenager(NAME_OF_FILE_WITH_INCOMES, NAME_OF_FILE_WITH_EXPENCES, userMenager.downloadIdOfLoggedInUser());
     }
 }
-bool MyPocket::isUserLoggedIn() { 
+
+bool MyPocket::isUserLoggedIn()
+{
     return userMenager.isUserLoggedIn();
 }   
 
@@ -28,26 +30,23 @@ void MyPocket::changePassword()
 {
     userMenager.changePassworgLoggedUser();   
 }
-void MyPocket::logOut() {
-    userMenager.logOut();
-    delete pocketMenager;
-    pocketMenager = NULL;
-}
 void MyPocket::addIncome() {
-    if (userMenager.isUserLoggedIn()) {
+    if (userMenager.isUserLoggedIn())
+    {
         pocketMenager->addIncome();
     } else {
         cout << "Zrobione !!." << endl;
-        usleep(2000000);
+        usleep(20000000);
     }
 }
 
 void MyPocket::addExpense() {
-    if (userMenager.isUserLoggedIn()) {
+    if (userMenager.isUserLoggedIn())
+    {
         pocketMenager->addExpense();
     } else {
-        cout << "zrobione." << endl;
-        usleep(2000000);
+        cout << "Zrobione." << endl;
+        usleep(20000000);
     }
 }
 
@@ -57,7 +56,7 @@ void MyPocket::showBalanceFromTheCurrentMonth()
         pocketMenager->showBalanceFromTheCurrentMonth();
     } else {
         system("pause");
-        usleep(2000000);
+        usleep(20000000);
     }
 }
 
@@ -67,7 +66,7 @@ void MyPocket::showBalanceFromThePreviousMonth()
         pocketMenager->showBalanceFromThePreviousMonth();
     } else {
         system("pause");
-        usleep(2000000);
+        usleep(20000000);
     }
 }
 
@@ -78,6 +77,12 @@ void MyPocket::showBalanceFromPeriod()
     } else {
        
         system("pause");
-        usleep(2000000);
+        usleep(20000000);
     }
+}
+void MyPocket::logOut()
+{
+    userMenager.logOut();
+    delete pocketMenager;
+    pocketMenager = NULL;
 }

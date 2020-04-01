@@ -32,9 +32,9 @@ void FileWithUser::addUserToFileXML(User user)
        pugi::xml_node password = Uzytkownik.append_child("Password");
        password.append_child(pugi::node_pcdata).set_value(user.getPassword().c_str());
            
-        //doc.print(std::cout); //wyswietlenie w terminalu;
+
         doc.save_file(getNameFile().c_str());
-        //assert(saveSucceeded);
+
     }
     else
     {
@@ -52,9 +52,7 @@ void FileWithUser::addUserToFileXML(User user)
     pugi::xml_node password = Uzytkownik.append_child("Password");
     password.append_child(pugi::node_pcdata).set_value(user.getPassword().c_str());
     
-     //doc.print(std::cout); //wyswietlenie w terminalu;
-      //bool saveSucceeded = doc.save_file(getNameFile().c_str());
-      //assert(saveSucceeded);
+ 
         doc.save_file(getNameFile().c_str());
     }
 }
@@ -89,10 +87,10 @@ void FileWithUser::saveAllUseresToFile(vector <User> &users)
     pugi::xml_document doc;
     
     auto root = doc.append_child("Uzytkownicy"); // tworznie nowego pliku z galezia glowna
-    pugi::xml_node Uzytkownik = root.append_child("Uzytkownik");
-      
+    
     for (vector<User>::iterator itr = users.begin(); itr != users.end(); itr++)
     {
+        pugi::xml_node Uzytkownik = root.append_child("Uzytkownik");
         pugi::xml_node id = Uzytkownik.append_child("ID");
         id.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(itr->getId()).c_str());
         pugi::xml_node name = Uzytkownik.append_child("Name");
@@ -104,10 +102,7 @@ void FileWithUser::saveAllUseresToFile(vector <User> &users)
         pugi::xml_node password = Uzytkownik.append_child("Password");
         password.append_child(pugi::node_pcdata).set_value(itr->getPassword().c_str());
     }
-    
-    //doc.print(std::cout); //wyswietlenie w terminalu;
-    //bool saveSucceeded = doc.save_file("DocTemp");
-    //assert(saveSucceeded);
+
     doc.save_file("DocTemp");
     auxiliaryMethods.deleteFile(getNameFile().c_str());
     auxiliaryMethods.changeNameFile("DocTemp", getNameFile().c_str());

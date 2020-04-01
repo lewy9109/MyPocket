@@ -19,14 +19,13 @@
 using namespace std;
 class FileWithIncomes : File    
 {
-    Income income;
-    vector <Income> incomes;
     int idOfLastIncome;
-    float round_float_precision(float x, unsigned digits);
+    
 public:
     FileWithIncomes(string nameOfTheFileWithIncomes) : File(nameOfTheFileWithIncomes) {
-        idOfLastIncome = 0; 
+        idOfLastIncome = 0;
     };
+    int getTheIdOfLastIncome();
     void addIncomeToFile(Income income);
     vector <Income> loadIncomesOfLoggedInUserFromFile(int LOGGING_USER_ID);
 };
