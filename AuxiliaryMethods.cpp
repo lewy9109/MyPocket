@@ -89,7 +89,27 @@ void AuxiliaryMethods::changeNameFile(string oldName, string newName)
 
 string AuxiliaryMethods::setCurrentDateOfTheOperation()
 {
+    // windows system;
+    SYSTEMTIME localTime;
+      GetLocalTime(&localTime);
+      ostringstream year;
+      year << localTime.wYear;
+      string yearAsAPartOfString = year.str();
+      ostringstream month;
+      month << localTime.wMonth;
+      string monthAsAPartOfString = month.str();
+      if (monthAsAPartOfString.length() == 1)
+          monthAsAPartOfString = "0" + monthAsAPartOfString;
+      ostringstream day;
+      day << localTime.wDay;
+      string dayAsAPartOfString = day.str();
+      if (dayAsAPartOfString.length() == 1)
+          dayAsAPartOfString = "0" + dayAsAPartOfString;
+      string currentDateAsAString = yearAsAPartOfString + "-" + monthAsAPartOfString + "-" + dayAsAPartOfString;
 
+      return currentDateAsAString;
+    /*
+     on mac os system
     time_t now;
     struct tm nowLocal;
 
@@ -109,7 +129,9 @@ string AuxiliaryMethods::setCurrentDateOfTheOperation()
     fulldate = year + "-" + month + "-" + day;
 
     return fulldate;
+     */
 }
+
 string AuxiliaryMethods::setUsersDateOfTheOperation()
 {
     cout << "Please enter the date (yyyy-mm-dd): ";

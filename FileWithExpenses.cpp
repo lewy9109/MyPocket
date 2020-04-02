@@ -73,6 +73,7 @@ vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int LOGGING
         if (LOGGING_USER_ID == expense.getUserId())
         expenses.push_back(expense);
         
+        idOfLastExpense = expense.getExpenseId();
     }   
         return expenses;
 }

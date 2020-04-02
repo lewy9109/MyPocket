@@ -13,6 +13,7 @@
 #include <sstream>
 #include <algorithm>
 #include <ctime>
+#include <windows.h>
 using namespace std;
 
 class AuxiliaryMethods

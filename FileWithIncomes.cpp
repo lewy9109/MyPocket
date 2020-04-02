@@ -81,7 +81,8 @@ vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int LOGGING_U
         if (LOGGING_USER_ID == income.getUserId())
         incomes.push_back(income);
         
-    }
+        idOfLastIncome = income.getIncomeId();
+    }   
         return incomes;
 }
 int FileWithIncomes::getTheIdOfLastIncome()
