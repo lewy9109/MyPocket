@@ -59,7 +59,7 @@ void FileWithIncomes::addIncomeToFile(Income income)
 }
 
 
-vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int loggedInUserId)
+vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int LOGGING_USER_ID)
 {
     vector <Income> incomes;
     Income income;
@@ -78,18 +78,14 @@ vector <Income> FileWithIncomes::loadIncomesOfLoggedInUserFromFile(int loggedInU
         income.setItem(tool.child("item").text().as_string());
         income.setAmount(tool.child("amount").text().as_double());
         
-        if (loggedInUserId == income.getUserId())
+        if (LOGGING_USER_ID == income.getUserId())
         incomes.push_back(income);
         
-        idOfLastIncome = income.getIncomeId();
     }
         return incomes;
 }
-
-
 int FileWithIncomes::getTheIdOfLastIncome()
 {
-
     return idOfLastIncome;
 }
 

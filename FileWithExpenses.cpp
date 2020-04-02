@@ -15,9 +15,8 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
     pugi::xml_parse_result result = doc.load_file(getNameFile().c_str(),pugi::parse_default|pugi::parse_declaration);
     if (!result)
     {
-        //jesli nie istnieje plik;
        
-        auto root = doc.append_child("Wydatki"); // tworznie nowego pliku z galezia glowna
+        auto root = doc.append_child("Wydatki");
         pugi::xml_node Uzytkownik = root.append_child("Wydatek");
            
         pugi::xml_node inconeId = Uzytkownik.append_child("expenseId");
@@ -31,13 +30,11 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
         pugi::xml_node amount = Uzytkownik.append_child("amount");
         amount.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(expense.getAmount()).c_str());
         
-       // bool saveSucceeded = doc.save_file(getNameFile().c_str());
-       // assert(saveSucceeded);
         doc.save_file(getNameFile().c_str());
     }
     else
     {
-        pugi::xml_node root = doc.document_element(); // dodawanie kolejnych uzytkownikow
+        pugi::xml_node root = doc.document_element(); 
         pugi::xml_node Uzytkownik = root.append_child("Wydatek");
         
         pugi::xml_node inconeId = Uzytkownik.append_child("expenseId");
@@ -51,13 +48,11 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
         pugi::xml_node amount = Uzytkownik.append_child("amount");
         amount.append_child(pugi::node_pcdata).set_value(auxiliaryMethods.convertDoubleToString(expense.getAmount()).c_str());
 
-       // bool saveSucceeded = doc.save_file(getNameFile().c_str());
-       //1 assert(saveSucceeded);
         doc.save_file(getNameFile().c_str());
     }
 }
 
-vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int loggedInUserId)
+vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int LOGGING_USER_ID)
 {
     vector <Expense> expenses;
     Expense expense;
@@ -69,16 +64,15 @@ vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int loggedI
 
     for (pugi::xml_node tool = selectedNode.child("Wydatek"); tool; tool = tool.next_sibling("Wydatek"))
     {
-        expense.setExpenseId(tool.child("inconeId").text().as_int());
+        expense.setExpenseId(tool.child("expenseId").text().as_int());
         expense.setUserId(tool.child("userId").text().as_int());
         expense.setDate(tool.child("date").text().as_string());
         expense.setItem(tool.child("item").text().as_string());
         expense.setAmount(tool.child("amount").text().as_double());
         
-        if (loggedInUserId == expense.getUserId())
+        if (LOGGING_USER_ID == expense.getUserId())
         expenses.push_back(expense);
         
-        idOfLastExpense = expense.getExpenseId();
     }   
         return expenses;
 }

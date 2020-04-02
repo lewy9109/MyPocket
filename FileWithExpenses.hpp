@@ -20,6 +20,7 @@ using namespace std;
 class FileWithExpenses : File
 {
     int idOfLastExpense;
+    
 public:
     FileWithExpenses(string nameOfTheFileWithExpenses) : File(nameOfTheFileWithExpenses) {
         idOfLastExpense = 0;
