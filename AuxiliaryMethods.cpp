@@ -255,6 +255,6 @@ time_t AuxiliaryMethods::changeDateFormatForUnixTime (string date)
 void AuxiliaryMethods::pause()
 {
     cin.clear();
-    cout << endl << "Press any key to continue...";
+    cout << endl << "Nacisni Enter by kontynulowac ...";
     cin.ignore();
 }

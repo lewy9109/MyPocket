@@ -205,7 +205,8 @@ void PocketMenager::showBalanceFromPeriod()
     double balanceFromPeriod;
     incomesFromPeriod = loadIncomesOnlyFromPeriod(startDate, endDate);
     expensesFromPeriod = loadExpensesOnlyFromPeriod(startDate, endDate);
-    if ((incomesFromPeriod.empty() == false) && (expensesFromPeriod.empty() == false)) {
+    if ((incomesFromPeriod.empty() == false) || (expensesFromPeriod.empty() == false))
+    {
         system("cls");
         vector <Income> sortedIncomesFromPeriod;
         displayIncomesFromSelectedPeriodOfTime(incomesFromPeriod);
