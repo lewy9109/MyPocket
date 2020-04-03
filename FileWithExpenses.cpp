@@ -50,6 +50,7 @@ void FileWithExpenses::addExpenseToFile(Expense expense)
 
         doc.save_file(getNameFile().c_str());
     }
+    idOfLastExpense ++;
 }
 
 vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int LOGGING_USER_ID)
@@ -74,6 +75,7 @@ vector <Expense> FileWithExpenses::loadExpenseOfLoggedInUserFromFile(int LOGGING
         expenses.push_back(expense);
         
         idOfLastExpense = expense.getExpenseId();
+        
     }   
         return expenses;
 }

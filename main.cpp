@@ -16,7 +16,8 @@ char chooseOptionFromMainMenu();
 char chooseOptionFromUsersMenu();
 char loadChar();
 
-int main() {
+int main()
+{
 
     MyPocket myPocket ("FileWithUsers.xml", "Incomes.xml", "Expenses.xml");
 

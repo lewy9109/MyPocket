@@ -196,9 +196,9 @@ void PocketMenager::showBalanceFromPeriod()
     vector <Income> incomesFromPeriod;
     vector <Expense> expensesFromPeriod;
     system("cls");
-    cout << "Start date for the balance" << endl;
+    cout << "Od kiedy:" << endl;
     string startDate = auxiliaryMethods.setUsersDateOfTheOperation();
-    cout << "End date for the balance: " << endl;
+    cout << "Do kiedy: " << endl;
     string endDate = auxiliaryMethods.setUsersDateOfTheOperation();
     double totalIncomes;
     double totalExpenses;
@@ -221,11 +221,13 @@ void PocketMenager::showBalanceFromPeriod()
         cout << "---------------------------------------" << endl;
         cout << "BILANS Z WYBRANEGO OKRESU: " << balanceFromPeriod << endl;
         cout << "---------------------------------------" << endl;
-        auxiliaryMethods.pause();
+        
     } else {
         cout << "Nie ma czego tu wyswietlac" << endl;
-       auxiliaryMethods.pause();
+       
     }
+    cin.ignore();
+    auxiliaryMethods.pause();
 }
 
 vector <Income> PocketMenager::loadIncomesOnlyFromCurrentMonth()

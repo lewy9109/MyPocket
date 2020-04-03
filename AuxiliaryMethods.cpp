@@ -89,47 +89,28 @@ void AuxiliaryMethods::changeNameFile(string oldName, string newName)
 
 string AuxiliaryMethods::setCurrentDateOfTheOperation()
 {
-    // windows system;
-    SYSTEMTIME localTime;
-      GetLocalTime(&localTime);
-      ostringstream year;
-      year << localTime.wYear;
-      string yearAsAPartOfString = year.str();
-      ostringstream month;
-      month << localTime.wMonth;
-      string monthAsAPartOfString = month.str();
-      if (monthAsAPartOfString.length() == 1)
-          monthAsAPartOfString = "0" + monthAsAPartOfString;
-      ostringstream day;
-      day << localTime.wDay;
-      string dayAsAPartOfString = day.str();
-      if (dayAsAPartOfString.length() == 1)
-          dayAsAPartOfString = "0" + dayAsAPartOfString;
-      string currentDateAsAString = yearAsAPartOfString + "-" + monthAsAPartOfString + "-" + dayAsAPartOfString;
 
-      return currentDateAsAString;
-    /*
-     on mac os system
-    time_t now;
-    struct tm nowLocal;
+    time_t now = time(0);
 
-    now = time(NULL);
+    tm *ltm = localtime(&now);
 
-    nowLocal = *localtime(&now);
-
-    int yearInt = nowLocal.tm_year + 1900;
-    int monthInt = nowLocal.tm_mon;
-    int dayInt =  nowLocal.tm_mday;
-
+    int yearInt =  1900 + ltm->tm_year;
+    int monthInt = 1 + ltm->tm_mon;
+    int dayInt =  ltm->tm_mday;
+    
     string day, month, year, fulldate;
     year = convertDoubleToString(yearInt);
     month = convertDoubleToString(monthInt);
+    if (month.length() == 1)
+        month = "0" + month;
     day = convertDoubleToString(dayInt);
+    if (day.length() == 1)
+           day = "0" + day;
 
     fulldate = year + "-" + month + "-" + day;
-
+    cout << fulldate << endl;
     return fulldate;
-     */
+     
 }
 
 string AuxiliaryMethods::setUsersDateOfTheOperation()
@@ -188,7 +169,7 @@ bool AuxiliaryMethods::checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsA
         }
         break;
     case 2:
-        if (((yearAsAnInteger%4 == 0) && (yearAsAnInteger%100 != 0)) || (yearAsAnInteger%400 == 0)) {
+        if (((yearAsAnInteger % 4 == 0) && (yearAsAnInteger % 100 != 0)) || (yearAsAnInteger%400 == 0)) {
             if (dayAsAnInteger < 1 || dayAsAnInteger > 29) {
                 hasTheDateCorrectFormat = false;
                 return hasTheDateCorrectFormat;
@@ -209,26 +190,22 @@ bool AuxiliaryMethods::checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsA
 }
 int AuxiliaryMethods::getCurrentYear()  
 {
-    time_t now;
-    struct tm nowLocal;
+    time_t now = time(0);
 
-    now = time(NULL);
+     tm *ltm = localtime(&now);
 
-    nowLocal = *localtime(&now);
-    int yearInt = nowLocal.tm_year + 1900;
+     int yearInt =  1900 + ltm->tm_year;
 
     return yearInt;
 }
 
 int AuxiliaryMethods::getCurrentMonth()
 {
-    time_t now;
-    struct tm nowLocal;
+    time_t now = time(0);
 
-    now = time(NULL);
+    tm *ltm = localtime(&now);
 
-    nowLocal = *localtime(&now);
-    int monthInt = nowLocal.tm_mon;
+    int monthInt = 1 + ltm->tm_mon;
 
     return monthInt;
 }
@@ -273,7 +250,6 @@ time_t AuxiliaryMethods::changeDateFormatForUnixTime (string date)
     time.tm_min = 0;
     time.tm_sec = 0;
     time_t timestamp = mktime(&time);
-
     return timestamp;
 }
 void AuxiliaryMethods::pause()
